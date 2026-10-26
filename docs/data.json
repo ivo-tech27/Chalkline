@@ -1,0 +1,33 @@
+{
+  "version": "2026-10-26-ap9",
+  "updated": "2026-10-26T15:00:00Z",
+  "poll": {"source": "AP", "name": "AP Top 25", "released": "2026-10-25", "week": 9},
+  "top25": [
+    {"id":"miami","rank":1,"w":7,"l":0},{"id":"ohiost","rank":2,"w":6,"l":1},{"id":"georgia","rank":3,"w":6,"l":1},
+    {"id":"indiana","rank":4,"w":7,"l":1},{"id":"nd","rank":5,"w":6,"l":1},{"id":"utah","rank":6,"w":7,"l":0},
+    {"id":"ucla","rank":7,"w":7,"l":0},{"id":"byu","rank":8,"w":6,"l":1},{"id":"kentucky","rank":9,"w":7,"l":1},
+    {"id":"alabama","rank":10,"w":6,"l":2},{"id":"texas","rank":11,"w":5,"l":2},{"id":"olemiss","rank":12,"w":5,"l":2},
+    {"id":"ttu","rank":13,"w":6,"l":1},{"id":"wake","rank":14,"w":6,"l":1},{"id":"lsu","rank":15,"w":6,"l":2},
+    {"id":"tenn","rank":16,"w":6,"l":2},{"id":"florida","rank":17,"w":5,"l":2},{"id":"houston","rank":18,"w":6,"l":2},
+    {"id":"smu","rank":19,"w":6,"l":1},{"id":"nw","rank":20,"w":6,"l":1},{"id":"boise","rank":20,"w":6,"l":1},
+    {"id":"arizona","rank":22,"w":6,"l":1},{"id":"mizzou","rank":23,"w":5,"l":2},{"id":"okst","rank":24,"w":5,"l":2},
+    {"id":"wisc","rank":25,"w":5,"l":2}
+  ],
+  "others": [
+    {"id":"iowa","pts":76},{"id":"unm","pts":41},{"id":"cincy","pts":11},{"id":"orst","pts":10},{"id":"scar","pts":8},
+    {"id":"minn","pts":7},{"id":"usc","pts":7},{"id":"utsa","pts":1},{"id":"vt","pts":1}
+  ],
+  "records": {},
+  "games": [
+    {"week":8,"a":"ucf","as":39,"b":"byu","bs":31,"ot":true,"note":"At UCF"},
+    {"week":8,"a":"cincy","as":37,"b":"ttu","bs":24,"ot":false,"note":""},
+    {"week":8,"a":"texas","as":34,"b":"olemiss","bs":27,"ot":false,"note":"At Texas"},
+    {"week":8,"a":"wisc","as":24,"b":"usc","bs":7,"ot":false,"note":"At Wisconsin"}
+  ],
+  "extraTeams": [],
+  "notes": ["Northwestern and Boise State tied at No. 20."],
+  "sources": [
+    {"title":"NCAA.com","url":"https://www.ncaa.com/news/football/article/2026-10-25/texas-soars-byu-and-texas-tech-fall-latest-ap-top-25-rankings"},
+    {"title":"On3 AP Top 25","url":"https://www.on3.com/college/football/rankings/ap-poll/"}
+  ]
+}
