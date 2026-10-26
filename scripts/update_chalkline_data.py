@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Refresh docs/data.json for the Chalkline app from ESPN's public college football feeds.
+"""Refresh data.json for the Chalkline app from ESPN's public college football feeds.
 
 Uses the CFP committee rankings once they exist, otherwise the AP Top 25.
 Adds recent final scores involving tracked teams. Leaves the file untouched
@@ -13,8 +13,8 @@ import sys
 import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-DATA = ROOT / "docs" / "data.json"
-PAGE = ROOT / "docs" / "index.html"
+DATA = ROOT / "data.json"
+PAGE = ROOT / "index.html"
 API = "https://site.api.espn.com/apis/site/v2/sports/football/college-football"
 
 # ESPN location names that differ from the app's team names.

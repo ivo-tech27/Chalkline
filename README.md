@@ -14,8 +14,8 @@ Open the site in Safari, tap **Share**, then **Add to Home Screen**.
 
 ## Data
 
-`docs/data.json` is refreshed every morning by `.github/workflows/chalkline-data.yml`, which pulls the AP Top 25, or the CFP committee rankings once they're released, plus final scores from ESPN's public feed. Run it by hand from the **Actions** tab with **Run workflow**.
+`data.json` is refreshed every morning by `.github/workflows/chalkline-data.yml`, which pulls the AP Top 25, or the CFP committee rankings once they're released, plus final scores from ESPN's public feed. Run it by hand from the **Actions** tab with **Run workflow**.
 
 ## Hosting
 
-GitHub Pages: **Settings → Pages → Deploy from a branch → `main` / `/docs`**.
+GitHub Pages: **Settings → Pages → Deploy from a branch → `main` / `(root)`**.
