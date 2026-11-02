@@ -1,95 +1,95 @@
 {
- "version": "2026-10-25-ap9",
- "updated": "2026-10-26T17:10:02Z",
+ "version": "2026-11-01-ap10",
+ "updated": "2026-11-02T11:58:05Z",
  "poll": {
   "source": "AP",
   "name": "AP Top 25",
-  "released": "2026-10-25",
-  "week": 9
+  "released": "2026-11-01",
+  "week": 10
  },
  "top25": [
   {
    "id": "miami",
    "rank": 1,
-   "w": 7,
+   "w": 8,
    "l": 0
   },
   {
-   "id": "ohiost",
-   "rank": 2,
-   "w": 6,
-   "l": 1
-  },
-  {
    "id": "georgia",
-   "rank": 3,
-   "w": 6,
+   "rank": 2,
+   "w": 7,
    "l": 1
   },
   {
-   "id": "indiana",
+   "id": "utah",
+   "rank": 3,
+   "w": 8,
+   "l": 0
+  },
+  {
+   "id": "nd",
    "rank": 4,
    "w": 7,
    "l": 1
   },
   {
-   "id": "nd",
+   "id": "ucla",
    "rank": 5,
-   "w": 6,
+   "w": 8,
+   "l": 0
+  },
+  {
+   "id": "indiana",
+   "rank": 6,
+   "w": 8,
    "l": 1
   },
   {
-   "id": "utah",
-   "rank": 6,
-   "w": 7,
-   "l": 0
-  },
-  {
-   "id": "ucla",
+   "id": "byu",
    "rank": 7,
    "w": 7,
-   "l": 0
-  },
-  {
-   "id": "byu",
-   "rank": 8,
-   "w": 6,
    "l": 1
   },
   {
    "id": "kentucky",
-   "rank": 9,
+   "rank": 8,
    "w": 7,
    "l": 1
   },
   {
    "id": "alabama",
-   "rank": 10,
+   "rank": 9,
    "w": 6,
    "l": 2
   },
   {
    "id": "texas",
+   "rank": 10,
+   "w": 6,
+   "l": 2
+  },
+  {
+   "id": "ohiost",
    "rank": 11,
-   "w": 5,
+   "w": 6,
    "l": 2
   },
   {
    "id": "olemiss",
    "rank": 12,
-   "w": 5,
+   "w": 6,
    "l": 2
   },
   {
    "id": "ttu",
    "rank": 13,
-   "w": 6,
+   "w": 7,
    "l": 1
   },
   {
    "id": "wake",
    "rank": 14,
-   "w": 6,
+   "w": 7,
    "l": 1
   },
   {
@@ -105,111 +105,117 @@
    "l": 2
   },
   {
-   "id": "florida",
-   "rank": 17,
-   "w": 5,
-   "l": 2
-  },
-  {
    "id": "houston",
-   "rank": 18,
+   "rank": 17,
    "w": 6,
    "l": 2
   },
   {
-   "id": "smu",
+   "id": "usc",
+   "rank": 18,
+   "w": 7,
+   "l": 2
+  },
+  {
+   "id": "mizzou",
    "rank": 19,
    "w": 6,
-   "l": 1
+   "l": 2
   },
   {
    "id": "boise",
    "rank": 20,
-   "w": 6,
+   "w": 7,
    "l": 1
   },
   {
-   "id": "nw",
-   "rank": 20,
+   "id": "iowa",
+   "rank": 21,
    "w": 6,
+   "l": 2
+  },
+  {
+   "id": "unm",
+   "rank": 22,
+   "w": 7,
    "l": 1
+  },
+  {
+   "id": "scar",
+   "rank": 23,
+   "w": 5,
+   "l": 3
   },
   {
    "id": "arizona",
-   "rank": 22,
-   "w": 6,
-   "l": 1
-  },
-  {
-   "id": "mizzou",
-   "rank": 23,
-   "w": 5,
-   "l": 2
-  },
-  {
-   "id": "okst",
    "rank": 24,
-   "w": 5,
+   "w": 6,
    "l": 2
   },
   {
-   "id": "wisc",
+   "id": "florida",
    "rank": 25,
    "w": 5,
-   "l": 2
+   "l": 3
   }
  ],
  "others": [
   {
-   "id": "iowa",
-   "pts": 76,
+   "id": "nw",
+   "pts": 79,
    "w": 0,
    "l": 0
   },
   {
-   "id": "unm",
-   "pts": 41,
-   "w": 0,
-   "l": 0
-  },
-  {
-   "id": "cincy",
-   "pts": 11,
-   "w": 0,
-   "l": 0
-  },
-  {
-   "id": "orst",
-   "pts": 10,
-   "w": 0,
-   "l": 0
-  },
-  {
-   "id": "scar",
-   "pts": 8,
-   "w": 0,
-   "l": 0
-  },
-  {
-   "id": "minn",
-   "pts": 7,
-   "w": 0,
-   "l": 0
-  },
-  {
-   "id": "usc",
-   "pts": 7,
+   "id": "oregon",
+   "pts": 55,
    "w": 0,
    "l": 0
   },
   {
    "id": "utsa",
-   "pts": 1,
+   "pts": 43,
+   "w": 0,
+   "l": 0
+  },
+  {
+   "id": "smu",
+   "pts": 27,
    "w": 0,
    "l": 0
   },
   {
    "id": "vt",
+   "pts": 12,
+   "w": 0,
+   "l": 0
+  },
+  {
+   "id": "duke",
+   "pts": 10,
+   "w": 0,
+   "l": 0
+  },
+  {
+   "id": "minn",
+   "pts": 8,
+   "w": 0,
+   "l": 0
+  },
+  {
+   "id": "liberty",
+   "pts": 4,
+   "w": 0,
+   "l": 0
+  },
+  {
+   "id": "okst",
+   "pts": 3,
+   "w": 0,
+   "l": 0
+  },
+  {
+   "id": "louisville",
    "pts": 1,
    "w": 0,
    "l": 0
@@ -255,9 +261,7 @@
   }
  ],
  "extraTeams": [],
- "notes": [
-  "2 teams tied at No. 20."
- ],
+ "notes": [],
  "sources": [
   {
    "title": "ESPN rankings",
