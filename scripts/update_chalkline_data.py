@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 """Refresh data.json for the Chalkline app from ESPN's public college football feeds.
 
-Uses the CFP committee rankings once they exist, otherwise the AP Top 25.
-Adds recent final scores involving tracked teams. Leaves the file untouched
-on any fetch or parse problem, so a bad day never breaks the app.
+Rankings come only from the College Football Playoff selection committee. When the
+feed has no committee ranking, the current ranking is kept and only scores, records
+and the coming week's games are refreshed. Any fetch or parse problem leaves the
+file untouched, so a bad day never breaks the app.
 """
 import datetime as dt
 import json
 import pathlib
 import re
 import sys
+import urllib.error
 import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -23,12 +25,12 @@ ALIASES = {
     "Ole Miss": "olemiss", "Mississippi": "olemiss", "North Carolina State": "ncst", "Appalachian State": "appst",
     "Southern California": "usc", "Brigham Young": "byu", "Central Florida": "ucf", "Louisiana State": "lsu",
     "Southern Methodist": "smu", "Texas Christian": "tcu", "Texas-San Antonio": "utsa", "UT San Antonio": "utsa",
-    "Connecticut": "uconn", "Hawai'i": "hawaii",
+    "Connecticut": "uconn", "Hawai'i": "hawaii", "San José State": "sjsu", "San Jose State": "sjsu",
 }
 
 
 def get(url):
-    req = urllib.request.Request(url, headers={"User-Agent": "chalkline-data/1.0"})
+    req = urllib.request.Request(url, headers={"User-Agent": "chalkline-data/1.1"})
     with urllib.request.urlopen(req, timeout=30) as r:
         return json.load(r)
 
@@ -76,16 +78,32 @@ class Resolver:
         return tid
 
 
-def record(entry):
-    s = entry.get("recordSummary") or (entry.get("record") or {}).get("summary") or ""
-    m = re.match(r"(\d+)-(\d+)", s)
+def parse_record(s):
+    m = re.match(r"(\d+)-(\d+)", s or "")
     return (int(m.group(1)), int(m.group(2))) if m else (None, None)
 
 
-def pick_poll(rankings):
-    cfp = next((r for r in rankings if (r.get("type") == "cfp" or "playoff" in r.get("name", "").lower()) and r.get("ranks")), None)
-    ap = next((r for r in rankings if (r.get("type") == "ap" or r.get("name", "").startswith("AP")) and r.get("ranks")), None)
-    return cfp, ap
+def entry_record(entry):
+    return parse_record(entry.get("recordSummary") or (entry.get("record") or {}).get("summary"))
+
+
+def committee_poll(rankings):
+    for r in rankings:
+        name = (r.get("name") or "").lower()
+        if (r.get("type") == "cfp" or "playoff" in name or "committee" in name) and len(r.get("ranks") or []) >= 25:
+            return r
+    return None
+
+
+def scoreboard_day(day):
+    """One day of FBS games. ESPN rejects some parameter mixes, so fall back to simpler URLs."""
+    for q in (f"groups=80&limit=300&dates={day}", f"groups=80&dates={day}", f"dates={day}"):
+        try:
+            return get(f"{API}/scoreboard?{q}").get("events", [])
+        except urllib.error.HTTPError as exc:
+            last = exc
+    print(f"Scoreboard {day} unavailable: {last}")
+    return []
 
 
 def main():
@@ -93,91 +111,112 @@ def main():
     resolve = Resolver(old.get("extraTeams", []))
     now = dt.datetime.now(dt.timezone.utc)
 
-    rankings = get(f"{API}/rankings").get("rankings", [])
-    cfp, ap = pick_poll(rankings)
-    main_poll = cfp or ap
-    if not main_poll or len(main_poll["ranks"]) < 25:
-        print("No usable poll in the feed; leaving data.json unchanged.")
-        return 0
-
-    top25, seen = [], set()
-    for e in main_poll["ranks"][:25]:
-        tid = resolve(e["team"])
-        w, l = record(e)
-        top25.append({"id": tid, "rank": int(e.get("current") or len(top25) + 1), "w": w, "l": l})
-        seen.add(tid)
-
-    others = []
-    if cfp and ap:
-        for e in ap["ranks"]:
-            tid = resolve(e["team"])
-            if tid not in seen:
-                w, l = record(e)
-                others.append({"id": tid, "pts": int(e.get("points") or 0), "w": w, "l": l})
-                seen.add(tid)
-    for e in (ap or main_poll).get("others", []):
-        tid = resolve(e["team"])
-        if tid not in seen:
-            w, l = record(e)
-            others.append({"id": tid, "pts": int(e.get("points") or 0), "w": w, "l": l})
-            seen.add(tid)
-
-    # Final scores from the last 10 days involving a tracked team.
-    start = (now - dt.timedelta(days=10)).strftime("%Y%m%d")
-    end = now.strftime("%Y%m%d")
-    games = {(g["week"], g["a"], g["b"]): g for g in old.get("games", [])}
     try:
-        board = get(f"{API}/scoreboard?groups=80&limit=400&dates={start}-{end}")
-        for ev in board.get("events", []):
-            comp = (ev.get("competitions") or [{}])[0]
-            if not ((comp.get("status") or ev.get("status") or {}).get("type") or {}).get("completed"):
-                continue
-            sides = comp.get("competitors") or []
-            if len(sides) != 2:
-                continue
-            ids = [resolve(c["team"]) for c in sides]
-            if not any(i in seen for i in ids):
-                continue
-            pts = [int(float(c.get("score") or 0)) for c in sides]
-            wi = 0 if pts[0] > pts[1] else 1
-            home = next((i for i, c in enumerate(sides) if c.get("homeAway") == "home"), None)
-            note = ""
-            if home is not None and not comp.get("neutralSite"):
-                note = f"At {sides[home]['team'].get('location', '')}"
-            period = ((comp.get("status") or {}).get("period")) or 4
-            week = int((ev.get("week") or {}).get("number") or main_poll.get("occurrence", {}).get("number") or 0)
-            g = {"week": week, "a": ids[wi], "as": pts[wi], "b": ids[1 - wi], "bs": pts[1 - wi], "ot": period > 4, "note": note}
-            games[(week, g["a"], g["b"])] = g
-    except Exception as exc:  # scores are a bonus; keep the poll update
-        print(f"Scoreboard skipped: {exc}")
+        poll = committee_poll(get(f"{API}/rankings").get("rankings", []))
+    except Exception as exc:
+        print(f"Rankings feed unavailable: {exc}")
+        poll = None
+
+    if poll:
+        top25 = []
+        for e in poll["ranks"][:25]:
+            w, l = entry_record(e)
+            top25.append({"id": resolve(e["team"]), "rank": int(e.get("current") or len(top25) + 1),
+                          "prev": int(e.get("previous") or 0), "w": w, "l": l})
+        released = (poll.get("date") or now.isoformat())[:10]
+        week = int((poll.get("occurrence") or {}).get("number") or old.get("poll", {}).get("week") or 0)
+        others = []
+        in_poll = {r["id"] for r in top25}
+        for e in poll.get("droppedOut") or []:
+            tid = resolve(e["team"])
+            if tid not in in_poll:
+                w, l = entry_record(e)
+                others.append({"id": tid, "pts": 0, "prev": int(e.get("previous") or 0), "w": w, "l": l, "dropped": True})
+        poll_info = {"source": "CFP", "name": "CFP Rankings", "released": released, "week": week}
+        version = f"{released}-cfp{week}"
+    else:
+        print("No committee ranking in the feed; keeping the current ranking.")
+        top25, others = old["top25"], old.get("others", [])
+        poll_info, version = old["poll"], old["version"]
+
+    tracked = {r["id"] for r in top25} | {o["id"] for o in others}
+    records = dict(old.get("records", {}))
+    games = {(g["week"], g["a"], g["b"]): g for g in old.get("games", [])}
+    upcoming = []
+
+    for offset in range(-9, 9):
+        day = (now + dt.timedelta(days=offset)).strftime("%Y%m%d")
+        for ev in scoreboard_day(day):
+            try:
+                comp = (ev.get("competitions") or [{}])[0]
+                sides = comp.get("competitors") or []
+                if len(sides) != 2:
+                    continue
+                ids = [resolve(c["team"]) for c in sides]
+                for tid, c in zip(ids, sides):
+                    w, l = parse_record(((c.get("records") or [{}])[0]).get("summary"))
+                    if w is not None:
+                        records[tid] = {"w": w, "l": l}
+                if not any(i in tracked for i in ids):
+                    continue
+                state = ((comp.get("status") or ev.get("status") or {}).get("type") or {})
+                home = next((i for i, c in enumerate(sides) if c.get("homeAway") == "home"), 1)
+                away = 1 - home
+                neutral = bool(comp.get("neutralSite"))
+                week = int((ev.get("week") or {}).get("number") or 0)
+                if state.get("completed"):
+                    pts = [int(float(c.get("score") or 0)) for c in sides]
+                    wi = 0 if pts[0] > pts[1] else 1
+                    note = "" if neutral else f"At {sides[home]['team'].get('location', '')}"
+                    period = (comp.get("status") or {}).get("period") or 4
+                    g = {"week": week, "a": ids[wi], "as": pts[wi], "b": ids[1 - wi], "bs": pts[1 - wi], "ot": period > 4, "note": note}
+                    games[(week, g["a"], g["b"])] = g
+                elif state.get("state") == "pre" and offset >= 0:
+                    tv = ""
+                    for b in comp.get("broadcasts") or []:
+                        if b.get("names"):
+                            tv = b["names"][0]
+                            break
+                    upcoming.append({"week": week, "date": ev.get("date") or "", "away": ids[away], "home": ids[home],
+                                     "neutral": neutral, "tv": tv})
+            except Exception as exc:  # one odd event shouldn't sink the rest
+                print(f"Skipped an event: {exc}")
+
+    # Records from the scoreboard are newer than the ranking's for teams that have played since.
+    for r in top25 + others:
+        rec = records.get(r["id"])
+        if rec:
+            r["w"], r["l"] = rec["w"], rec["l"]
 
     game_list = sorted(games.values(), key=lambda g: g["week"])
     if game_list:
         last = game_list[-1]["week"]
         game_list = [g for g in game_list if g["week"] > last - 3]
+    upcoming.sort(key=lambda g: g["date"])
+    if upcoming:
+        first_week = upcoming[0]["week"]
+        upcoming = [g for g in upcoming if g["week"] == first_week]
 
-    src = "CFP" if cfp else "AP"
-    released = (main_poll.get("date") or now.isoformat())[:10]
-    week = int((main_poll.get("occurrence") or {}).get("number") or old.get("poll", {}).get("week") or 0)
+    notes = []
     ties = {}
     for r in top25:
         ties.setdefault(r["rank"], []).append(r["id"])
-    notes = []
     for rank, tids in ties.items():
         if len(tids) > 1:
             notes.append(f"{len(tids)} teams tied at No. {rank}.")
 
     new = {
-        "version": f"{released}-{src.lower()}{week}",
+        "version": version,
         "updated": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "poll": {"source": src, "name": "CFP Rankings" if cfp else "AP Top 25", "released": released, "week": week},
+        "poll": poll_info,
         "top25": top25,
         "others": others,
-        "records": old.get("records", {}),
+        "records": records,
         "games": game_list,
+        "upcoming": upcoming,
         "extraTeams": list(resolve.extra.values()),
         "notes": notes,
-        "sources": [{"title": "ESPN rankings", "url": "https://www.espn.com/college-football/rankings"},
+        "sources": [{"title": "CFP rankings", "url": "https://collegefootballplayoff.com/rankings"},
                     {"title": "ESPN scoreboard", "url": "https://www.espn.com/college-football/scoreboard"}],
     }
 
@@ -186,7 +225,7 @@ def main():
         print("No changes.")
         return 0
     DATA.write_text(json.dumps(new, indent=1) + "\n", encoding="utf-8")
-    print(f"Updated: {new['poll']['name']} {released}, {len(game_list)} games.")
+    print(f"Updated: {poll_info['name']} {poll_info['released']}, {len(game_list)} results, {len(upcoming)} upcoming games.")
     return 0
 
 

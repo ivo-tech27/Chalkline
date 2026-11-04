@@ -265,6 +265,63 @@ dialog::backdrop{background:rgba(5,10,8,.55)}
 footer{color:var(--muted); font-size:13px; padding-block:0 40px}
 footer p{max-width:80ch; margin:6px 0}
 
+
+/* ---------- Road to Selection Day ---------- */
+.road{position:relative; display:grid; gap:10px}
+.road-line{display:grid; grid-template-columns:repeat(7, minmax(0,1fr)); position:relative}
+.road-line::before{content:""; position:absolute; left:calc(100%/14); right:calc(100%/14); top:7px; height:2px; background:repeating-linear-gradient(90deg, color-mix(in oklab, var(--on-band) 55%, transparent) 0 10px, transparent 10px 16px)}
+.stop{position:relative; display:grid; justify-items:center; gap:4px; text-align:center; font-size:11.5px; min-width:0}
+.stop i{width:16px; height:16px; border-radius:50%; background:var(--band); border:2px solid color-mix(in oklab, var(--on-band) 55%, transparent); position:relative; z-index:1}
+.stop.done i{background:var(--on-band); border-color:var(--on-band)}
+.stop.next i{background:var(--band2); border-color:var(--band2); box-shadow:0 0 0 5px color-mix(in oklab, var(--band2) 35%, transparent)}
+.stop b{font-family:var(--f-cond); text-transform:uppercase; letter-spacing:.06em; font-size:12px; line-height:1.1}
+.stop span{opacity:.72; font-variant-numeric:tabular-nums}
+.stop.next b{color:var(--band2)}
+.countdown{display:flex; flex-wrap:wrap; gap:6px 14px; align-items:baseline; justify-content:center; font-size:13.5px}
+.countdown strong{font-family:var(--f-display); font-size:22px; font-weight:800; letter-spacing:.02em; font-variant-numeric:tabular-nums}
+@media (max-width:560px){ .stop span{display:none} .stop b{font-size:10.5px} }
+
+/* ---------- Path to the title ---------- */
+.path{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:4px; width:100%; margin-top:2px}
+.path div{background:color-mix(in oklab, var(--on-band) 10%, transparent); border-radius:6px; padding:6px 8px; position:relative; overflow:hidden}
+.path div i{position:absolute; inset:auto 0 0 0; height:3px; background:var(--band2)}
+.path small{display:block; font-family:var(--f-cond); text-transform:uppercase; letter-spacing:.08em; font-size:10.5px; opacity:.75}
+.path b{font-family:var(--f-display); font-size:20px; font-weight:800; font-variant-numeric:tabular-nums}
+
+/* ---------- Chalk / Chaos ---------- */
+.chaos{display:flex; align-items:center; gap:10px; font-family:var(--f-cond); text-transform:uppercase; letter-spacing:.08em; font-weight:700; font-size:12.5px; color:var(--muted); background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:6px 14px}
+.chaos input{width:130px; accent-color:var(--accent)}
+.chaos output{min-width:72px; color:var(--fg); text-align:right}
+
+/* ---------- This week ---------- */
+.slate{display:grid; grid-template-columns:repeat(auto-fill, minmax(320px,1fr)); gap:14px}
+.mu{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); overflow:hidden; display:grid; min-width:0}
+.mu-top{display:flex; justify-content:space-between; gap:8px; padding:9px 12px; font-size:12.5px; color:var(--muted); border-bottom:1px solid var(--line); align-items:center}
+.mu-pick{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.mu-side{border:0; background:none; text-align:left; padding:12px; display:grid; gap:6px; position:relative; min-width:0}
+.mu-side + .mu-side{border-left:1px solid var(--line); text-align:right; justify-items:end}
+.mu-side .nm{font-family:var(--f-display); font-size:23px; font-weight:800; text-transform:uppercase; line-height:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:100%}
+.mu-side .mrk{font-family:var(--f-cond); font-weight:700; color:var(--muted); font-size:13px}
+.mu-side .wp{font-family:var(--f-cond); font-weight:700; font-size:14px}
+.mu-side:hover{background:color-mix(in oklab, var(--accent) 6%, transparent)}
+.mu-side.on{background:color-mix(in oklab, var(--c) 16%, var(--surface)); box-shadow:inset 0 -4px 0 var(--c)}
+.mu-side.on .nm::after{content:" ✓"; color:var(--accent)}
+.mu-side.off{opacity:.45}
+.mu-bar{display:flex; height:5px}
+.mu-bar i{display:block}
+.stakes{padding:10px 12px; font-size:13px; display:grid; gap:4px; border-top:1px solid var(--line); background:var(--surface2)}
+.stakes p{margin:0}
+.stakes b{font-weight:700}
+.pill.hot{color:var(--bad)} .pill.seed{color:var(--warn)} .pill.calm{color:var(--muted); border-color:var(--line)}
+.proj{display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:6px; margin-top:6px}
+.proj div{display:flex; gap:8px; align-items:center; padding:6px 8px; border-radius:8px; background:var(--surface2); min-width:0; font-size:13.5px}
+.proj div span.n{font-family:var(--f-display); font-weight:800; font-size:18px; width:22px; text-align:right}
+.proj div span.t{flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-weight:600}
+.proj div.newin{outline:2px solid var(--good)}
+.proj .mv{font-family:var(--f-cond); font-weight:700; font-size:12.5px}
+.empty{padding:28px; text-align:center; color:var(--muted); background:var(--surface); border:1px dashed var(--line); border-radius:var(--r)}
+.was{color:var(--muted); font-size:12px}
+
 @media (max-width: 900px){
   .grid2,.rank-layout{grid-template-columns:minmax(0,1fr)}
   .summary{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -294,12 +351,13 @@ footer p{max-width:80ch; margin:6px 0}
         <p class="eyebrow">College Football Playoff scenarios · 2026 season · 12 teams</p>
         <h1>Chalkline</h1>
         <p class="sub" id="dataLine"></p>
-        <p class="sub" style="margin-top:4px">Move teams, crown conference champions, log scores and pick the bracket.</p>
+        <p class="sub" style="margin-top:4px">Pick this week’s games, watch the field move, and build your bracket.</p>
       </div>
       <button class="team-btn" id="myTeamBtn" type="button"></button>
     </div>
     <div id="myLine"></div>
     <div class="summary" id="summary"></div>
+    <div class="road" id="road"></div>
   </div>
 </header>
 
@@ -307,7 +365,8 @@ footer p{max-width:80ch; margin:6px 0}
   <div class="wrap">
     <div class="tabs" role="tablist">
       <button class="tab" role="tab" data-tab="bracket" id="tabbtn-bracket">Bracket</button>
-      <button class="tab" role="tab" data-tab="rankings" id="tabbtn-rankings">Top 25 &amp; bubble</button>
+      <button class="tab" role="tab" data-tab="slate" id="tabbtn-slate">This week</button>
+      <button class="tab" role="tab" data-tab="rankings" id="tabbtn-rankings">Committee Top 25</button>
       <button class="tab" role="tab" data-tab="matchup" id="tabbtn-matchup">Head-to-head</button>
       <button class="tab" role="tab" data-tab="results" id="tabbtn-results">Scores</button>
     </div>
@@ -319,6 +378,7 @@ footer p{max-width:80ch; margin:6px 0}
 </div>
 <main class="wrap">
   <section id="view-bracket" data-view="bracket"></section>
+  <section id="view-slate" data-view="slate" hidden></section>
   <section id="view-rankings" data-view="rankings" hidden></section>
   <section id="view-matchup" data-view="matchup" hidden></section>
   <section id="view-results" data-view="results" hidden></section>
@@ -327,7 +387,7 @@ footer p{max-width:80ch; margin:6px 0}
 <footer class="wrap">
   <p id="srcLine"></p>
   <p><strong>How the field is built.</strong> The five highest-ranked conference champions get automatic bids; the next seven highest-ranked teams get at-large bids. All 12 are seeded straight by ranking, and seeds 1–4 get first-round byes. Seeds 5–8 host first-round games on campus.</p>
-  <p>Win chances come from a simple model based on poll position and record, not betting lines. Your edits, picks, scores and team choice save in this browser only. When a new poll arrives, the app starts fresh from it and keeps your team choice.</p>
+  <p>Rankings come only from the College Football Playoff selection committee. Win chances come from a simple model based on committee position and record, not betting lines; the Chalk–Chaos slider loosens it up. Your edits, picks and team choice save on this device only. When the committee releases a new ranking, the app starts fresh from it and keeps your team choice.</p>
 </footer>
 
 <dialog id="teamDlg" aria-labelledby="teamDlgTitle">
@@ -343,6 +403,11 @@ footer p{max-width:80ch; margin:6px 0}
     </div>
     <div id="teamGrid"></div>
   </div>
+</dialog>
+
+<dialog id="shareDlg" aria-labelledby="shareTitle">
+  <div class="dlg-head"><div><p class="eyebrow" style="color:var(--muted)">Your bracket</p><h3 id="shareTitle">Share it</h3></div><button class="icon-btn" data-close aria-label="Close">✕</button></div>
+  <div class="dlg-body"><img id="shareImg" alt="Your Chalkline bracket" style="width:100%;border-radius:10px;display:block"><p style="color:var(--muted);margin:12px 0 0;font-size:13.5px">On iPhone, press and hold the image, then tap Save to Photos or Share.</p><div class="btns" style="margin-top:12px"><a class="btn primary" id="shareDl" download="chalkline-bracket.png" style="text-decoration:none">Download image</a></div></div>
 </dialog>
 
 <dialog id="drawer" aria-label="Team details"><div id="drawerBody"></div></dialog>
@@ -442,7 +507,7 @@ const TEAMS = [
 ];
 const TM = Object.fromEntries(TEAMS.map(t=>[t.id,t]));
 /* Poll, records and results. data.json (published beside this page) is refreshed daily and replaces this copy when newer. */
-const EMBED = {"version":"2026-10-26-ap9","updated":"2026-10-26T15:00:00Z","poll":{"source":"AP","name":"AP Top 25","released":"2026-10-25","week":9},"top25":[{"id":"miami","rank":1,"w":7,"l":0},{"id":"ohiost","rank":2,"w":6,"l":1},{"id":"georgia","rank":3,"w":6,"l":1},{"id":"indiana","rank":4,"w":7,"l":1},{"id":"nd","rank":5,"w":6,"l":1},{"id":"utah","rank":6,"w":7,"l":0},{"id":"ucla","rank":7,"w":7,"l":0},{"id":"byu","rank":8,"w":6,"l":1},{"id":"kentucky","rank":9,"w":7,"l":1},{"id":"alabama","rank":10,"w":6,"l":2},{"id":"texas","rank":11,"w":5,"l":2},{"id":"olemiss","rank":12,"w":5,"l":2},{"id":"ttu","rank":13,"w":6,"l":1},{"id":"wake","rank":14,"w":6,"l":1},{"id":"lsu","rank":15,"w":6,"l":2},{"id":"tenn","rank":16,"w":6,"l":2},{"id":"florida","rank":17,"w":5,"l":2},{"id":"houston","rank":18,"w":6,"l":2},{"id":"smu","rank":19,"w":6,"l":1},{"id":"nw","rank":20,"w":6,"l":1},{"id":"boise","rank":20,"w":6,"l":1},{"id":"arizona","rank":22,"w":6,"l":1},{"id":"mizzou","rank":23,"w":5,"l":2},{"id":"okst","rank":24,"w":5,"l":2},{"id":"wisc","rank":25,"w":5,"l":2}],"others":[{"id":"iowa","pts":76},{"id":"unm","pts":41},{"id":"cincy","pts":11},{"id":"orst","pts":10},{"id":"scar","pts":8},{"id":"minn","pts":7},{"id":"usc","pts":7},{"id":"utsa","pts":1},{"id":"vt","pts":1}],"records":{},"games":[{"week":8,"a":"ucf","as":39,"b":"byu","bs":31,"ot":true,"note":"At UCF"},{"week":8,"a":"cincy","as":37,"b":"ttu","bs":24,"ot":false,"note":""},{"week":8,"a":"texas","as":34,"b":"olemiss","bs":27,"ot":false,"note":"At Texas"},{"week":8,"a":"wisc","as":24,"b":"usc","bs":7,"ot":false,"note":"At Wisconsin"}],"extraTeams":[],"notes":["Northwestern and Boise State tied at No. 20."],"sources":[{"title":"NCAA.com","url":"https://www.ncaa.com/news/football/article/2026-10-25/texas-soars-byu-and-texas-tech-fall-latest-ap-top-25-rankings"},{"title":"On3 AP Top 25","url":"https://www.on3.com/college/football/rankings/ap-poll/"}]};
+const EMBED = {"version":"2026-11-03-cfp1","updated":"2026-11-04T15:00:00Z","poll":{"source":"CFP","name":"CFP Rankings","released":"2026-11-03","week":10},"top25":[{"id":"miami","rank":1,"prev":0,"w":8,"l":0},{"id":"georgia","rank":2,"prev":0,"w":7,"l":1},{"id":"utah","rank":3,"prev":0,"w":8,"l":0},{"id":"indiana","rank":4,"prev":0,"w":8,"l":1},{"id":"alabama","rank":5,"prev":0,"w":6,"l":2},{"id":"kentucky","rank":6,"prev":0,"w":7,"l":1},{"id":"texas","rank":7,"prev":0,"w":6,"l":2},{"id":"ucla","rank":8,"prev":0,"w":8,"l":0},{"id":"byu","rank":9,"prev":0,"w":7,"l":1},{"id":"olemiss","rank":10,"prev":0,"w":6,"l":2},{"id":"nd","rank":11,"prev":0,"w":7,"l":1},{"id":"ohiost","rank":12,"prev":0,"w":6,"l":2},{"id":"tenn","rank":13,"prev":0,"w":6,"l":2},{"id":"lsu","rank":14,"prev":0,"w":6,"l":2},{"id":"ttu","rank":15,"prev":0,"w":7,"l":1},{"id":"wake","rank":16,"prev":0,"w":7,"l":1},{"id":"houston","rank":17,"prev":0,"w":6,"l":2},{"id":"mizzou","rank":18,"prev":0,"w":6,"l":2},{"id":"iowa","rank":19,"prev":0,"w":6,"l":2},{"id":"usc","rank":20,"prev":0,"w":7,"l":2},{"id":"scar","rank":21,"prev":0,"w":5,"l":3},{"id":"arizona","rank":22,"prev":0,"w":6,"l":2},{"id":"oregon","rank":23,"prev":0,"w":5,"l":3},{"id":"florida","rank":24,"prev":0,"w":5,"l":3},{"id":"boise","rank":25,"prev":0,"w":7,"l":1}],"others":[],"records":{},"games":[{"week":8,"a":"ucf","as":39,"b":"byu","bs":31,"ot":true,"note":"At UCF"},{"week":8,"a":"cincy","as":37,"b":"ttu","bs":24,"ot":false,"note":""},{"week":8,"a":"texas","as":34,"b":"olemiss","bs":27,"ot":false,"note":"At Texas"},{"week":8,"a":"wisc","as":24,"b":"usc","bs":7,"ot":false,"note":"At Wisconsin"}],"upcoming":[{"week":10,"date":"2026-11-07T17:00Z","away":"texas","home":"mizzou","neutral":false,"tv":"ESPN"},{"week":10,"date":"2026-11-07T17:00Z","away":"byu","home":"utah","neutral":false,"tv":"ABC"},{"week":10,"date":"2026-11-07T20:30Z","away":"alabama","home":"lsu","neutral":false,"tv":"ABC"},{"week":10,"date":"2026-11-08T00:15Z","away":"kentucky","home":"tenn","neutral":false,"tv":"ESPN"},{"week":10,"date":"2026-11-08T00:30Z","away":"miami","home":"nd","neutral":false,"tv":"NBC"},{"week":10,"date":"2026-11-08T00:30Z","away":"georgia","home":"olemiss","neutral":false,"tv":"ABC"}],"extraTeams":[],"notes":[],"sources":[{"title":"CFP rankings, Nov. 3","url":"https://collegefootballplayoff.com/news/2026/11/3/rankings"},{"title":"NCAA.com","url":"https://www.ncaa.com/news/football/article/2026-11-03/miami-georgia-lead-first-college-football-playoff-rankings-2026"}]};
 let DATA, POLL, PSRC;
 function applyData(d){
   DATA = d; PSRC = d.poll.source;
@@ -477,7 +542,9 @@ function fresh(){
     games: (DATA.games||[]).filter(g=>TM[g.a]&&TM[g.b]).map((g,i)=>({...g,id:'s'+i,counted:false})),
     picks: {},
     myTeam: null,
-    h2h: ['miami','ohiost'],
+    h2h: ['miami','georgia'],
+    slate: {},
+    chaos: 0,
   };
 }
 let state = fresh(), dataChanged = false, booting = true;
@@ -485,7 +552,7 @@ function loadSaved(){
   let s=null; try{ s = JSON.parse(localStorage.getItem(KEY)||'null'); }catch(e){}
   if(!s || !Array.isArray(s.order)) return;
   if(s.dataVer===DATA.version) state = Object.assign(fresh(), s);
-  else { state = Object.assign(fresh(), {myTeam:s.myTeam||null, h2h:s.h2h||state.h2h, champs:s.champs||{}}); dataChanged = true; }
+  else { state = Object.assign(fresh(), {myTeam:s.myTeam||null, h2h:s.h2h||state.h2h, chaos:s.chaos||0}); dataChanged = true; }
 }
 loadSaved();
 function save(){ if(booting) return; try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){} }
@@ -517,7 +584,8 @@ function rating(id){
   if(r.known && r.w+r.l>0) base += ((r.w/(r.w+r.l))-.75)*8;
   return base;
 }
-function winProb(a,b){return 1/(1+Math.pow(10,-(rating(a)-rating(b))/18))}
+function winProb(a,b){const c=(state.chaos||0)/100; return 1/(1+Math.pow(10,-(rating(a)-rating(b))*(1-0.85*c)/18))}
+function chaosLabel(v){return v<15?'Chalk':v<40?'Some upsets':v<70?'Wild':'Pure chaos'}
 function pct(x){return Math.round(x*100)+'%'}
 function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(toast._t);toast._t=setTimeout(()=>t.classList.remove('show'),2200)}
 
@@ -598,7 +666,7 @@ function applyTheme(){
 }
 
 /* ================= RENDER: HEADER ================= */
-function renderHeader(F,R){
+function renderHeader(F,R,odds){
   const P = pool();
   const last = F.seeds.filter(id=>!F.auto.has(id)).slice(-1)[0];
   const champ = R.f.w;
@@ -625,7 +693,10 @@ function renderHeader(F,R){
     path = (ch && ch.id!==me && t.conf!=='IND') ? `${gap>0?`${gap} spot${gap>1?'s':''} behind the last at-large team. `:''}A ${CONFS[t.conf]} title could open an automatic bid.`
          : `${gap>0?`${gap} spot${gap>1?'s':''} behind the last at-large team`:'On the edge of the field'}`;
   }
-  $('#myLine').innerHTML = `<div class="myline"><strong>${esc(t.name)}</strong><span>${rk?'No. '+rk:'Unranked'} · ${r.txt}</span><span class="pill ${st.cls}" style="color:var(--on-band);border-color:var(--on-band)">${st.txt}</span><span>${path}</span></div>`;
+  const o = odds.find(x=>x.id===me);
+  const steps = o ? [['Quarters',o.qf],['Semis',o.sf],['Final',o.fin],['Title',o.win]] : null;
+  const track = steps ? `<div class="path" aria-label="Chances to reach each round">${steps.map(([k,v])=>`<div><small>${k}</small><b>${v>=.995?'100':v<.005?'<1':Math.round(v*100)}%</b><i style="width:${Math.max(2,v*100)}%"></i></div>`).join('')}</div>` : '';
+  $('#myLine').innerHTML = `<div class="myline"><strong>${esc(t.name)}</strong><span>${rk?'Committee No. '+rk:'Unranked'} · ${r.txt}</span><span class="pill ${st.cls}" style="color:var(--on-band);border-color:var(--on-band)">${st.txt}</span><span>${path}</span>${track}</div>`;
 }
 
 /* ================= RENDER: BRACKET ================= */
@@ -642,7 +713,7 @@ function slotHTML(d, side, R, F){
   return `<button class="slot ${cls} ${state.myTeam===id?'mine':''}" data-pick="${d.k}" data-team="${id}" ${other?'':'disabled'} aria-label="Pick ${esc(t.name)}">
     <span class="sd">${seed}</span>${chip(id)}<span class="nm">${esc(t.name)}<small>${record(id).txt} · ${CONFS[t.conf]}${F.auto.has(id)?' champ':''}</small></span><span class="pc num">${p}</span></button>`;
 }
-function renderBracket(F,R){
+function renderBracket(F,R,odds){
   const cols = [0,1,2,3].map(r=>{
     const games = DEF.filter(d=>d.r===r).map(d=>{
       const host = d.r===0 ? `at ${esc(TM[R[d.k].a]?.name||'higher seed')}` : esc(d.site);
@@ -651,17 +722,18 @@ function renderBracket(F,R){
     const champ = r===3 ? `<div class="champ ${R.f.w?'has':''}"><p class="eyebrow">National champion</p><b>${R.f.w?esc(TM[R.f.w].name):'Not picked yet'}</b></div>` : '';
     return `<div class="round"><div class="round-h">${ROUNDS[r][0]}<small>${ROUNDS[r][1]}</small></div><div class="round-games">${games}${champ}</div></div>`;
   }).join('');
-  const odds = simulate(F.seeds, state.picks);
   const P = pool();
   const firstOut = F.firstOut.map(id=>`<li><span class="l">${chip(id)}<button class="linklike" data-open="${id}">${esc(TM[id].name)}</button></span><span class="num" style="color:var(--muted)">No. ${P.indexOf(id)+1} · ${record(id).txt}</span></li>`).join('');
   const autos = [...F.auto].map(id=>`<li><span class="l">${chip(id)}<span>${esc(TM[id].name)}</span></span><span class="tag">${CONFS[TM[id].conf]} ${F.ch[TM[id].conf].manual?'(your pick)':'(projected)'}</span></li>`).join('');
   $('#view-bracket').innerHTML = `
-    <div class="view-head"><div><h2>The 12-team bracket</h2><p>Tap a team to send it through. Percentages are the model's chance to win that game. Change the poll or conference champions and the seeds update here.</p></div>
-      <div class="btns"><button class="btn" data-act="chalk">Pick all favorites</button><button class="btn primary" data-act="sim">Simulate the rest</button><button class="btn ghost" data-act="clear">Clear picks</button></div></div>
+    <div class="view-head"><div><h2>The 12-team bracket</h2><p>Seeded from the committee’s Top 25. Tap a team to send it through; percentages are the model’s chance to win that game. Slide toward chaos and the underdogs start biting.</p></div>
+      <div class="btns" style="align-items:center">
+        <label class="chaos" for="chaos">Chalk <input type="range" id="chaos" min="0" max="100" step="5" value="${state.chaos||0}"> Chaos <output>${chaosLabel(state.chaos||0)}</output></label>
+        <button class="btn" data-act="chalk">Pick favorites</button><button class="btn primary" data-act="sim">Simulate the rest</button><button class="btn" data-act="share">Share bracket</button><button class="btn ghost" data-act="clear">Clear</button></div></div>
     <div class="bracket-scroll"><div class="bracket">${cols}</div></div>
     <p style="color:var(--muted);font-size:12.5px;margin:8px 0 0">The committee assigns quarterfinal bowl sites; they're shown here in bracket order.</p>
     <div class="grid2">
-      <div class="panel"><h3>Title odds</h3><p class="note">3,000 simulated playoffs from the current seeds, holding your picks in place.</p>
+      <div class="panel"><h3>Title odds</h3><p class="note">3,000 simulated playoffs from the current seeds, holding your picks in place. Model setting: ${chaosLabel(state.chaos||0).toLowerCase()}.</p>
         <div class="table-scroll"><table><thead><tr><th>Team</th><th>Quarters</th><th>Semis</th><th>Final</th><th>Title</th></tr></thead><tbody>
         ${odds.map(o=>`<tr class="${state.myTeam===o.id?'mine':''}"><td><span class="tcell"><span class="num" style="color:var(--muted);width:18px;text-align:right">${F.seeds.indexOf(o.id)+1}</span>${chip(o.id)}<button class="linklike" data-open="${o.id}">${esc(TM[o.id].name)}</button></span></td>
           <td>${pct(o.qf)}</td><td>${pct(o.sf)}</td><td>${pct(o.fin)}</td><td><span class="bar"><i style="width:${Math.min(100,o.win*100/Math.max(.01,odds[0].win))}%"></i></span><b>${(o.win*100).toFixed(o.win<.1?1:0)}%</b></td></tr>`).join('')}
@@ -669,23 +741,27 @@ function renderBracket(F,R){
       <div class="panel"><h3>Bids &amp; bubble</h3>
         <p class="sub-h">Automatic bids · top 5 conference champions</p><ul class="mini-list">${autos}</ul>
         <p class="sub-h">First four out</p><ul class="mini-list">${firstOut||'<li>—</li>'}</ul>
-        <p class="note" style="margin:12px 0 0">Change champions under <button class="linklike" data-goto="rankings" style="color:var(--accent)">Top 25 &amp; bubble</button>.</p>
+        <p class="note" style="margin:12px 0 0">Change champions under <button class="linklike" data-goto="rankings" style="color:var(--accent)">Committee Top 25</button>, or play out <button class="linklike" data-goto="slate" style="color:var(--accent)">this week’s games</button>.</p>
       </div>
     </div>`;
 }
 
 /* ================= RENDER: RANKINGS ================= */
 function renderRankings(F){
+  const firstWeek = POLL.every(r=>!r.prev);
   const rows = state.order.map((id,i)=>{
     const t = TM[id], ap = pollRank(id), st = statusOf(id,F);
-    const baseIdx = POLL.findIndex(r=>r.id===id)+1;
+    const entry = POLL.find(r=>r.id===id);
     let d = '<span class="delta">–</span>';
-    if(!baseIdx) d = '<span class="delta new">NEW</span>';
-    else if(baseIdx!==i+1) d = baseIdx>i+1 ? `<span class="delta up">▲${baseIdx-i-1}</span>` : `<span class="delta dn">▼${i+1-baseIdx}</span>`;
+    if(!entry) d = '<span class="delta new">YOU</span>';
+    else if(firstWeek) d = '<span class="delta">–</span>';
+    else if(!entry.prev) d = '<span class="delta new">NEW</span>';
+    else if(entry.prev!==entry.rank) d = entry.prev>entry.rank ? `<span class="delta up">▲${entry.prev-entry.rank}</span>` : `<span class="delta dn">▼${entry.rank-entry.prev}</span>`;
+    const moved = ap!==i+1 ? `<span class="was"> · committee ${ap?'No. '+ap:'unranked'}</span>` : '';
     const isChamp = F.champIds.has(id);
     return `<li class="${state.myTeam===id?'mine':''} ${i===11?'cut':''}">
       <span class="n num">${i+1}</span>${d}${chip(id)}
-      <span class="who"><button class="linklike" data-open="${id}">${esc(t.name)}${state.myTeam===id?' ★':''}</button><small>${CONFS[t.conf]}${isChamp?' · <span class="tag">'+(F.auto.has(id)?'auto bid':'proj. champ')+'</span>':''}${ap?' · '+PSRC+' '+ap:''}</small></span>
+      <span class="who"><button class="linklike" data-open="${id}">${esc(t.name)}${state.myTeam===id?' ★':''}</button><small>${CONFS[t.conf]}${isChamp?' · <span class="tag">'+(F.auto.has(id)?'auto bid':'proj. champ')+'</span>':''}${moved}</small></span>
       <span class="rec num">${record(id).txt}</span>
       <span class="st"><span class="pill ${st.cls}">${st.txt}</span></span>
       <span class="acts"><button class="icon-btn" data-mv="${id}" data-dir="-1" aria-label="Move ${esc(t.name)} up" ${i===0?'disabled':''}>▲</button><button class="icon-btn" data-mv="${id}" data-dir="1" aria-label="Move ${esc(t.name)} down" ${i===state.order.length-1?'disabled':''}>▼</button><button class="icon-btn" data-drop="${id}" aria-label="Drop ${esc(t.name)} from the Top 25">✕</button></span>
@@ -702,15 +778,15 @@ function renderRankings(F){
   }).join('');
   const addable = TEAMS.filter(t=>!P.includes(t.id)).sort((a,b)=>a.name.localeCompare(b.name));
   $('#view-rankings').innerHTML = `
-    <div class="view-head"><div><h2>Top 25 &amp; the bubble</h2><p>Arrows compare each team to its spot in the latest ${esc(DATA.poll.name)}. Reorder teams to play out a scenario. The dashed line marks No. 12.</p></div>
-      <div class="btns"><button class="btn ghost" data-act="reset">Reset to ${esc(DATA.poll.name)}</button></div></div>
+    <div class="view-head"><div><h2>Committee Top 25</h2><p>The selection committee’s ranking from ${fmtDate(DATA.poll.released)}. ${firstWeek?'This is the first ranking of the season, so movement arrows start next week.':'Arrows show each team’s move since the committee’s previous ranking.'} Reorder teams to argue with the committee; the dashed line marks No. 12.</p></div>
+      <div class="btns"><button class="btn ghost" data-act="reset">Reset to committee ranking</button></div></div>
     <div class="rank-layout">
       <ol class="rk">${rows}</ol>
       <div style="display:grid;gap:20px;min-width:0">
         <div class="panel"><h3>Conference races</h3><p class="note">Leave a conference on “Projected” to crown its highest-ranked team, or pick an upset champion. The top five champions get automatic bids.</p><div class="conf-grid">${confRows}</div></div>
-        <div class="panel"><h3>Outside the Top 25</h3><p class="note">Others receiving votes, plus any team you add. Promote one and the No. 25 team drops out.</p>
+        <div class="panel"><h3>Outside the Top 25</h3><p class="note">Teams that fell out of the committee’s ranking, plus any team you track. Promote one and the No. 25 team drops out.</p>
           <ul class="mini-list">${others.map(id=>`<li><span class="l">${chip(id)}<button class="linklike" data-open="${id}">${esc(TM[id].name)}</button></span>
-            <span style="display:flex;gap:10px;align-items:center"><span class="num" style="color:var(--muted);font-size:13px">${state.votes[id]?state.votes[id]+' pts':'added'} · ${record(id).txt}</span><button class="btn sm" data-promote="${id}">Add to 25</button>${state.votes[id]?'':`<button class="icon-btn" data-remove="${id}" aria-label="Remove ${esc(TM[id].name)}">✕</button>`}</span></li>`).join('')}</ul>
+            <span style="display:flex;gap:10px;align-items:center"><span class="num" style="color:var(--muted);font-size:13px">${(DATA.others||[]).some(o=>o.id===id&&o.dropped)?'dropped out':'tracked'} · ${record(id).txt}</span><button class="btn sm" data-promote="${id}">Add to 25</button><button class="icon-btn" data-remove="${id}" aria-label="Remove ${esc(TM[id].name)}">✕</button></span></li>`).join('')}</ul>
           <div class="add-row"><select id="addTeam" aria-label="Team to track"><option value="">Track another team…</option>${addable.map(t=>`<option value="${t.id}">${esc(t.name)} · ${CONFS[t.conf]}</option>`).join('')}</select><button class="btn" data-act="addteam">Add</button></div>
         </div>
       </div>
@@ -722,7 +798,7 @@ function teamOptions(sel){
   const P = pool();
   const grp = (label, ids)=>`<optgroup label="${label}">${ids.map(id=>`<option value="${id}" ${id===sel?'selected':''}>${esc(TM[id].name)}${rankOf(id)?' (No. '+rankOf(id)+')':''}</option>`).join('')}</optgroup>`;
   const rest = TEAMS.map(t=>t.id).filter(id=>!P.includes(id)).sort((a,b)=>TM[a].name.localeCompare(TM[b].name));
-  return grp('Top 25',state.order)+grp('Receiving votes / tracked',P.slice(25))+grp('All other teams',rest);
+  return grp('Top 25',state.order)+grp('Tracked',P.slice(25))+grp('All other teams',rest);
 }
 function teamGames(id){return state.games.filter(g=>g.a===id||g.b===id)}
 function renderMatchup(F){
@@ -733,12 +809,12 @@ function renderMatchup(F){
   const opp = (id,g)=>g.a===id?g.b:g.a;
   const common = [...new Set(ga.map(g=>opp(a,g)))].filter(o=>gb.some(g=>opp(b,g)===o));
   const meet = state.games.filter(g=>(g.a===a&&g.b===b)||(g.a===b&&g.b===a));
-  const pf = (id,gs)=>{if(!gs.length)return null; let f=0,x=0; gs.forEach(g=>{if(g.a===id){f+=g.as;x+=g.bs}else{f+=g.bs;x+=g.as}}); return {f:(f/gs.length).toFixed(1),x:(x/gs.length).toFixed(1)}};
+  const pf = (id,gs)=>{gs=gs.filter(g=>!g.hyp); if(!gs.length)return null; let f=0,x=0; gs.forEach(g=>{if(g.a===id){f+=g.as;x+=g.bs}else{f+=g.bs;x+=g.as}}); return {f:(f/gs.length).toFixed(1),x:(x/gs.length).toFixed(1)}};
   const pfa=pf(a,ga), pfb=pf(b,gb);
   const sa=statusOf(a,F), sb=statusOf(b,F);
   const P = pool();
   const rowsData = [
-    ['Poll rank', rankOf(a)||'NR', rankOf(b)||'NR', (rankOf(a)||99)<(rankOf(b)||99)?'a':(rankOf(a)||99)>(rankOf(b)||99)?'b':''],
+    ['Committee rank', rankOf(a)||'NR', rankOf(b)||'NR', (rankOf(a)||99)<(rankOf(b)||99)?'a':(rankOf(a)||99)>(rankOf(b)||99)?'b':''],
     ['Record', ra.txt, rb.txt, ra.known&&rb.known ? ((ra.w/(ra.w+ra.l||1))>(rb.w/(rb.w+rb.l||1))?'a':(ra.w/(ra.w+ra.l||1))<(rb.w/(rb.w+rb.l||1))?'b':'') : ''],
     ['Conference', CONFS[A.conf], CONFS[B.conf], ''],
     ['Playoff status', sa.txt, sb.txt, ''],
@@ -746,7 +822,7 @@ function renderMatchup(F){
     ['Pts for / against (logged)', pfa?`${pfa.f} / ${pfa.x}`:'—', pfb?`${pfb.f} / ${pfb.x}`:'—', ''],
     ['Logged games', ga.length, gb.length, ''],
   ];
-  const resultLine = g=>{const w=g.as>g.bs?g.a:g.b,l=w===g.a?g.b:g.a,ws=Math.max(g.as,g.bs),ls=Math.min(g.as,g.bs);return `Week ${g.week}: ${esc(TM[w].name)} ${ws}, ${esc(TM[l].name)} ${ls}${g.ot?' (OT)':''}`};
+  const resultLine = g=>{const w=g.as>g.bs?g.a:g.b,l=w===g.a?g.b:g.a,ws=Math.max(g.as,g.bs),ls=Math.min(g.as,g.bs);return g.hyp?`Week ${g.week}: ${esc(TM[w].name)} over ${esc(TM[l].name)} (your pick)`:`Week ${g.week}: ${esc(TM[w].name)} ${ws}, ${esc(TM[l].name)} ${ls}${g.ot?' (OT)':''}`};
   $('#view-matchup').innerHTML = `
     <div class="view-head"><div><h2>Head-to-head</h2><p>Compare any two teams: poll position, record, playoff status, results you've logged and the model's pick. Use it to settle a seeding argument or preview a matchup.</p></div>
       <div class="btns"><button class="btn" data-act="swap">Swap sides</button><button class="btn" data-act="h2hlog">Log a result for this game</button></div></div>
@@ -770,12 +846,12 @@ function renderResults(){
   const weeks = [...new Set(state.games.map(g=>g.week))].sort((a,b)=>b-a);
   const list = weeks.map(w=>`<p class="week-h">Week ${w}</p><ul class="score-list">${state.games.filter(g=>g.week===w).map(g=>{
     const aw=g.as>g.bs;
-    const ln=(id,s,win)=>`<div class="ln ${win?'':'lose'}">${chip(id)}<button class="linklike" data-open="${id}" style="font-weight:${win?700:500}">${rankOf(id)?'<span style="color:var(--muted);font-weight:600">'+rankOf(id)+'</span> ':''}${esc(TM[id].name)}</button><b class="num">${s}</b></div>`;
-    return `<li class="score"><div class="lines">${ln(g.a,g.as,aw)}${ln(g.b,g.bs,!aw)}<span class="meta">Final${g.ot?'/OT':''}${g.note?' · '+esc(g.note):''} · ${g.counted?'Counted in records':'Already in official records'}</span></div><button class="icon-btn" data-delgame="${g.id}" aria-label="Delete result">✕</button></li>`;
+    const ln=(id,s,win)=>`<div class="ln ${win?'':'lose'}">${chip(id)}<button class="linklike" data-open="${id}" style="font-weight:${win?700:500}">${rankOf(id)?'<span style="color:var(--muted);font-weight:600">'+rankOf(id)+'</span> ':''}${esc(TM[id].name)}</button><b class="num">${g.hyp?(win?'W':''):s}</b></div>`;
+    return `<li class="score"><div class="lines">${ln(g.a,g.as,aw)}${ln(g.b,g.bs,!aw)}<span class="meta">${g.hyp?'Your pick · counted in records':`Final${g.ot?'/OT':''}${g.note?' · '+esc(g.note):''} · ${g.counted?'Counted in records':'Already in official records'}`}</span></div><button class="icon-btn" data-delgame="${g.id}" aria-label="Delete result">✕</button></li>`;
   }).join('')}</ul>`).join('');
   const [la,lb] = state.h2h;
   $('#view-results').innerHTML = `
-    <div class="view-head"><div><h2>Scores</h2><p>Log real results as they come in, or invent one to see what happens. A logged win or loss updates the team's record, and you can let the app shuffle the poll after an upset.</p></div></div>
+    <div class="view-head"><div><h2>Scores</h2><p>Final scores from the last few weeks load automatically. Log your own to see what happens. A logged win or loss updates the team's record, and you can let the app shuffle the poll after an upset.</p></div></div>
     <div class="panel">
       <h3>Log a result</h3>
       <form id="logForm" class="log-form" style="margin-top:10px">
@@ -783,7 +859,7 @@ function renderResults(){
         <div class="fld"><label for="lgAs">Score</label><input id="lgAs" type="number" min="0" max="150" required value="28"></div>
         <div class="fld"><label for="lgB">Opponent</label><select id="lgB" required>${opts(lb)}</select></div>
         <div class="fld"><label for="lgBs">Score</label><input id="lgBs" type="number" min="0" max="150" required value="24"></div>
-        <div class="fld"><label for="lgW">Week</label><input id="lgW" type="number" min="0" max="20" value="9"></div>
+        <div class="fld"><label for="lgW">Week</label><input id="lgW" type="number" min="0" max="20" value="${(DATA.upcoming&&DATA.upcoming[0]&&DATA.upcoming[0].week)||DATA.poll.week||10}"></div>
       </form>
       <div class="checks">
         <label><input type="checkbox" id="lgOT"> Overtime</label>
@@ -793,6 +869,137 @@ function renderResults(){
       </div>
     </div>
     ${list || '<p style="color:var(--muted)">No results logged.</p>'}`;
+}
+
+
+/* ================= THIS WEEK ================= */
+function slateGames(){
+  const cut = Date.now() - 5*3600e3;
+  return (DATA.upcoming||[]).filter(g=>TM[g.away]&&TM[g.home]&&(!g.date||Date.parse(g.date)>cut))
+    .map(g=>({...g,k:g.away+'@'+g.home}));
+}
+function applySlate(st, picks){
+  let n=0; const prev=state; state=st;
+  for(const g of slateGames()){ const w=picks[g.k]; if(!w) continue; const l = w===g.away?g.home:g.away;
+    state.games.push({id:'p'+g.k+Math.random().toString(36).slice(2,6),week:g.week||0,a:w,as:1,b:l,bs:0,ot:false,note:'',counted:true,hyp:true});
+    ensurePool(w); ensurePool(l); upsetAdjust(w,l); n++; }
+  state=prev; return n;
+}
+function whatIf(picks){
+  const clone = JSON.parse(JSON.stringify(state)); applySlate(clone, picks);
+  const prev=state; state=clone; const F=field(); state=prev; return F;
+}
+function outcomeLine(win, lose, F, base){
+  const move = id=>{
+    const now=F.seeds.indexOf(id), was=base.seeds.indexOf(id), nm=esc(TM[id].name);
+    if(now<0) return was<0 ? `${nm} stays out of the field` : `${nm} falls out of the field`;
+    if(was<0) return `${nm} gets in as the No. ${now+1} seed`;
+    if(now===was) return `${nm} stays the No. ${now+1} seed`;
+    return `${nm} ${now<was?'moves up':'drops'} to the No. ${now+1} seed`;
+  };
+  const ins = F.seeds.filter(id=>!base.seeds.includes(id)), outs = base.seeds.filter(id=>!F.seeds.includes(id));
+  const bits = [move(win)];
+  if(F.seeds.includes(lose) || base.seeds.includes(lose)) bits.push(move(lose));
+  for(const id of ins) if(id!==win && id!==lose) bits.push(`${esc(TM[id].name)} gets in`);
+  for(const id of outs) if(id!==win && id!==lose) bits.push(`${esc(TM[id].name)} is out`);
+  return bits.join('; ');
+}
+function renderSlate(F){
+  const games = slateGames();
+  const el = $('#view-slate');
+  const head = `<div class="view-head"><div><h2>This week</h2><p>Every game this week involving a team in the committee’s Top 25. Each card shows what the result does to the 12-team field. Pick winners, then play them out to see the new bracket.</p></div>
+    <div class="btns"><button class="btn" data-act="slatefav">Pick favorites</button><button class="btn" data-act="slatechaos">Roll the dice</button><button class="btn ghost" data-act="slateclear">Clear</button><button class="btn primary" data-act="slateapply">Play out my picks</button></div></div>`;
+  if(!games.length){ el.innerHTML = head + `<div class="empty">No upcoming games in the latest data. The schedule refreshes every morning, so check back after the weekend's results post.</div>`; return; }
+  const cards = games.map(g=>{
+    const A=TM[g.away], H=TM[g.home], pa=winProb(g.away,g.home);
+    const Fa = whatIf({[g.k]:g.away}), Fh = whatIf({[g.k]:g.home});
+    const changes = Fa.seeds.filter(x=>!Fh.seeds.includes(x)).length;
+    const seedShift = Fa.seeds.join()!==Fh.seeds.join();
+    const tag = changes ? '<span class="pill hot">Field-changer</span>' : seedShift ? '<span class="pill seed">Seeding</span>' : '<span class="pill calm">Status quo</span>';
+    const pick = state.slate[g.k];
+    const when = g.date ? new Date(g.date).toLocaleString('en-US',{weekday:'short',hour:'numeric',minute:'2-digit'}) : `Week ${g.week}`;
+    const side = (id,p,cls)=>{const t=TM[id];return `<button class="mu-side ${cls} ${pick?(pick===id?'on':'off'):''}" style="--c:${t.c1}" data-slate="${g.k}" data-team="${id}" aria-pressed="${pick===id}">
+      <span style="display:flex;gap:6px;align-items:center">${chip(id)}<span class="mrk">${rankOf(id)?'No. '+rankOf(id):'NR'} · ${record(id).txt}</span></span>
+      <span class="nm">${esc(t.name)}${state.myTeam===id?' ★':''}</span><span class="wp num">${pct(p)} to win</span></button>`};
+    return `<article class="mu">
+      <div class="mu-top"><span>${when}${g.tv?' · '+esc(g.tv):''}</span><span>${g.neutral?'Neutral site':'at '+esc(H.name)}</span></div>
+      <div class="mu-pick">${side(g.away,pa,'')}${side(g.home,1-pa,'')}</div>
+      <div class="mu-bar"><i style="width:${pa*100}%;background:${A.c1}"></i><i style="width:${(1-pa)*100}%;background:${H.c1}"></i></div>
+      <div class="stakes"><p>${tag}</p><p><b>If ${esc(A.name)} wins:</b> ${outcomeLine(g.away,g.home,Fa,F)}.</p><p><b>If ${esc(H.name)} wins:</b> ${outcomeLine(g.home,g.away,Fh,F)}.</p></div>
+    </article>`;
+  }).join('');
+  const picked = Object.keys(state.slate).filter(k=>games.some(g=>g.k===k));
+  const Fp = whatIf(state.slate);
+  const proj = Fp.seeds.map((id,i)=>{const was=F.seeds.indexOf(id); const mv = was<0?'<span class="mv" style="color:var(--good)">IN</span>': was!==i?`<span class="mv" style="color:${was>i?'var(--good)':'var(--bad)'}">${was>i?'▲':'▼'}${Math.abs(was-i)}</span>`:'';
+    return `<div class="${was<0?'newin':''}"><span class="n">${i+1}</span>${chip(id)}<span class="t">${esc(TM[id].name)}</span>${mv}</div>`}).join('');
+  const gone = F.seeds.filter(id=>!Fp.seeds.includes(id));
+  el.innerHTML = head + `<div class="slate">${cards}</div>
+    <div class="panel" style="margin-top:20px"><h3>Projected field after your picks</h3>
+      <p class="note">${picked.length?`${picked.length} of ${games.length} games picked. Arrows compare to the committee’s current field.`:'Pick some games above and the field updates here.'}${gone.length?` Knocked out: ${gone.map(id=>esc(TM[id].name)).join(', ')}.`:''}</p>
+      <div class="proj">${proj}</div></div>`;
+}
+
+/* ================= ROAD TO SELECTION DAY ================= */
+const ROAD = [
+  ['2026-11-03T19:00:00-05:00','Rankings 1'],['2026-11-10T21:00:00-05:00','Rankings 2'],['2026-11-17T21:00:00-05:00','Rankings 3'],
+  ['2026-11-24T19:30:00-05:00','Rankings 4'],['2026-12-01T19:00:00-05:00','Rankings 5'],['2026-12-06T12:00:00-05:00','Selection Day'],
+  ['2026-12-18T20:00:00-05:00','First round'],
+];
+function renderRoad(){
+  const now = Date.now(); const next = ROAD.findIndex(([d])=>Date.parse(d)>now);
+  const stops = ROAD.map(([d,l],i)=>{const dt=new Date(d);
+    return `<div class="stop ${next<0||i<next?'done':i===next?'next':''}"><i></i><b>${l}</b><span>${dt.toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'America/New_York'})}</span></div>`}).join('');
+  let cd = '<span>The playoff field is set.</span>';
+  if(next>=0){
+    let ms = Date.parse(ROAD[next][0])-now; const dd=Math.floor(ms/864e5); ms-=dd*864e5; const hh=Math.floor(ms/36e5); ms-=hh*36e5; const mm=Math.floor(ms/6e4);
+    const when = new Date(ROAD[next][0]).toLocaleString('en-US',{weekday:'short',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZone:'America/New_York'});
+    const sel = Date.parse(ROAD[5][0])-now;
+    cd = `<span>Next: <b>${ROAD[next][1]}</b> · ${when} ET</span><strong>${dd}d ${hh}h ${String(mm).padStart(2,'0')}m</strong>${next<5&&sel>0?`<span>${Math.ceil(sel/864e5)} days to Selection Day</span>`:''}`;
+  }
+  $('#road').innerHTML = `<div class="road-line" role="list" aria-label="Road to Selection Day">${stops}</div><div class="countdown" aria-live="off">${cd}</div>`;
+}
+
+/* ================= SHARE ================= */
+async function shareBracket(){
+  try{ await document.fonts.ready; }catch(e){}
+  const F=field(), R=resolve(F.seeds,state.picks), W=1080, H=1350;
+  const cv=document.createElement('canvas'); cv.width=W; cv.height=H; const x=cv.getContext('2d');
+  const css=getComputedStyle(document.documentElement);
+  const band=(css.getPropertyValue('--band')||'#123526').trim(), band2=(css.getPropertyValue('--band2')||'#c8a24a').trim();
+  const ink = band.startsWith('#')&&band.length===7 ? onColor(band) : '#f3f6f0';
+  const D='"Big Shoulders Display", Impact, sans-serif', C='"Barlow Condensed", "Arial Narrow", sans-serif';
+  x.fillStyle=band; x.fillRect(0,0,W,H);
+  x.globalAlpha=.08; x.fillStyle=ink; for(let i=1;i<10;i++) x.fillRect(i*W/10-1,0,2,H); x.globalAlpha=1;
+  x.fillStyle=band2; x.fillRect(0,H-46,W,8); x.fillRect(0,H-30,W,8);
+  x.fillStyle=ink; x.textBaseline='alphabetic';
+  x.font=`700 26px ${C}`; x.globalAlpha=.75; x.fillText(`CHALKLINE · COMMITTEE RANKINGS ${fmtDate(DATA.poll.released).toUpperCase()}`,56,78); x.globalAlpha=1;
+  x.font=`900 92px ${D}`; x.fillText('MY PLAYOFF BRACKET',52,170);
+  const box=(cx,cy,w,ids,win)=>{ ids.forEach((id,j)=>{const y=cy-38+j*38; x.globalAlpha=.22; x.fillStyle='#000'; x.fillRect(cx,y,w,36); x.globalAlpha=1;
+      if(!id){ x.fillStyle=ink; x.globalAlpha=.45; x.font=`600 22px ${C}`; x.fillText('TBD',cx+16,y+26); x.globalAlpha=1; return; }
+      const t=TM[id]; x.fillStyle=t.c1; x.fillRect(cx,y,10,36); x.globalAlpha = win&&win!==id?.42:1; x.fillStyle=ink;
+      x.font=`${win===id?800:600} 24px ${C}`; const sd=F.seeds.indexOf(id)+1; x.fillText(`${sd}  ${t.name.toUpperCase()}`,cx+18,y+26,w-26); x.globalAlpha=1; }); };
+  const col=[40,300,560,820], wd=[240,240,240,220];
+  const qy=[300,500,700,900], ry=qy.map(y=>y+20), sy=[(qy[0]+qy[1])/2,(qy[2]+qy[3])/2], fy=(sy[0]+sy[1])/2;
+  const line=(x1,y1,x2,y2)=>{x.strokeStyle=ink; x.globalAlpha=.35; x.lineWidth=3; x.beginPath(); x.moveTo(x1,y1); x.lineTo((x1+x2)/2,y1); x.lineTo((x1+x2)/2,y2); x.lineTo(x2,y2); x.stroke(); x.globalAlpha=1;};
+  const r1=['r1a','r1b','r1c','r1d'], qf=['qa','qb','qc','qd'], sf=['sa','sb'];
+  r1.forEach((k,i)=>{box(col[0],ry[i],wd[0],[R[k].a,R[k].b],R[k].w); line(col[0]+wd[0],ry[i],col[1],qy[i]+19);});
+  qf.forEach((k,i)=>{box(col[1],qy[i],wd[1],[R[k].a,R[k].b],R[k].w); line(col[1]+wd[1],qy[i],col[2],sy[i>>1]+(i%2?19:-19));});
+  sf.forEach((k,i)=>{box(col[2],sy[i],wd[2],[R[k].a,R[k].b],R[k].w); line(col[2]+wd[2],sy[i],col[3],fy+(i?19:-19));});
+  box(col[3],fy,wd[3],[R.f.a,R.f.b],R.f.w);
+  x.font=`700 22px ${C}`; x.globalAlpha=.7; ['FIRST ROUND','QUARTERFINALS','SEMIFINALS','TITLE GAME'].forEach((l,i)=>x.fillText(l,col[i],232)); x.globalAlpha=1;
+  const champ=R.f.w;
+  x.fillStyle = champ?TM[champ].c1:'rgba(0,0,0,.25)'; x.fillRect(40,1040,W-80,190);
+  x.fillStyle = champ?TM[champ].c2:band2; x.fillRect(40,1222,W-80,8);
+  const cink = champ?onColor(TM[champ].c1):ink; x.fillStyle=cink;
+  x.font=`700 26px ${C}`; x.fillText('NATIONAL CHAMPION · LAS VEGAS',72,1090);
+  x.font=`900 104px ${D}`; x.fillText(champ?TM[champ].name.toUpperCase():'STILL DECIDING',68,1196,W-140);
+  x.fillStyle=ink; x.font=`600 22px ${C}`; x.globalAlpha=.7; x.fillText('ivo-tech27.github.io/Chalkline',56,H-62); x.globalAlpha=1;
+  const blob = await new Promise(r=>cv.toBlob(r,'image/png'));
+  const file = new File([blob],'chalkline-bracket.png',{type:'image/png'});
+  if(navigator.canShare && navigator.canShare({files:[file]})){
+    try{ await navigator.share({files:[file], title:'My Chalkline bracket'}); return; }catch(e){ if(e && e.name==='AbortError') return; }
+  }
+  const url = cv.toDataURL('image/png'); $('#shareImg').src=url; $('#shareDl').href=url; $('#shareDlg').showModal();
 }
 
 /* ================= DIALOGS ================= */
@@ -814,7 +1021,7 @@ function openDrawer(id){
       <p class="sub-h">Record before logged games</p>
       <div class="rec-edit"><input type="number" min="0" max="15" id="recW" value="${(state.base[id]||[0,0])[0]}" aria-label="Wins"> <span>–</span> <input type="number" min="0" max="15" id="recL" value="${(state.base[id]||[0,0])[1]}" aria-label="Losses"><button class="btn sm" data-saverec="${id}">Save record</button></div>
       <p class="sub-h">Logged games</p>
-      <ul class="mini-list">${gs.length?gs.map(g=>{const me=g.a===id,os=me?g.b:g.a,mys=me?g.as:g.bs,ts=me?g.bs:g.as;return `<li><span class="l">${chip(os)}<span>Wk ${g.week} vs ${esc(TM[os].name)}</span></span><b class="num" style="color:${mys>ts?'var(--good)':'var(--bad)'}">${mys>ts?'W':'L'} ${mys}-${ts}${g.ot?' OT':''}</b></li>`}).join(''):'<li style="color:var(--muted)">None yet.</li>'}</ul>
+      <ul class="mini-list">${gs.length?gs.map(g=>{const me=g.a===id,os=me?g.b:g.a,mys=me?g.as:g.bs,ts=me?g.bs:g.as;return `<li><span class="l">${chip(os)}<span>Wk ${g.week} vs ${esc(TM[os].name)}</span></span><b class="num" style="color:${mys>ts?'var(--good)':'var(--bad)'}">${mys>ts?'W':'L'} ${g.hyp?'(pick)':mys+'-'+ts}${g.ot?' OT':''}</b></li>`}).join(''):'<li style="color:var(--muted)">None yet.</li>'}</ul>
       <div class="btns" style="margin-top:16px">
         ${state.myTeam===id?'<button class="btn" data-setteam="">Remove as my team</button>':`<button class="btn primary" data-setteam="${id}">Make this my team</button>`}
         <button class="btn" data-cmp="${id}">Compare head-to-head</button>
@@ -841,7 +1048,8 @@ function render(){
   const F = field(); const R = resolve(F.seeds, state.picks);
   for(const k in state.picks) if(!R[k] || R[k].w!==state.picks[k]) delete state.picks[k];
   const R2 = resolve(F.seeds, state.picks);
-  applyTheme(); renderHeader(F,R2); renderBracket(F,R2); renderRankings(F); renderMatchup(F); renderResults();
+  const odds = simulate(F.seeds, state.picks);
+  applyTheme(); renderHeader(F,R2,odds); renderBracket(F,R2,odds); renderSlate(F); renderRankings(F); renderMatchup(F); renderResults(); renderRoad();
   save();
 }
 function setTab(tab){
@@ -860,6 +1068,7 @@ document.addEventListener('click', e=>{
   if('close' in ds){ el.closest('dialog').close(); return; }
   if('setteam' in ds){ state.myTeam = ds.setteam||null; document.querySelectorAll('dialog[open]').forEach(d=>d.close()); render(); toast(ds.setteam?`${TM[ds.setteam].name} colors on`:'Back to the default look'); return; }
   if(ds.pick){ state.picks[ds.pick] = ds.team; render(); return; }
+  if(ds.slate){ if(state.slate[ds.slate]===ds.team) delete state.slate[ds.slate]; else state.slate[ds.slate]=ds.team; render(); return; }
   if(ds.unpick){ delete state.picks[ds.unpick]; render(); return; }
   if(ds.open){ openDrawer(ds.open); return; }
   if(ds.mv){ const o=state.order,i=o.indexOf(ds.mv),j=i+(+ds.dir); if(j<0||j>=o.length) return; [o[i],o[j]]=[o[j],o[i]]; render(); return; }
@@ -878,15 +1087,25 @@ document.addEventListener('click', e=>{
       for(const d of DEF){ const R=resolve(F.seeds,state.picks); const g=R[d.k]; if(g.w||!g.a||!g.b) continue;
         const p=winProb(g.a,g.b); state.picks[d.k] = ds.act==='chalk' ? (p>=.5?g.a:g.b) : (Math.random()<p?g.a:g.b); }
       render(); toast(ds.act==='chalk'?'Favorites picked':'Bracket simulated'); break; }
-    case 'reset': { const keep={myTeam:state.myTeam}; state=Object.assign(fresh(),keep); render(); toast('Reset to the latest '+DATA.poll.name); break; }
+    case 'reset': { const keep={myTeam:state.myTeam}; state=Object.assign(fresh(),keep); render(); toast('Reset to the committee ranking'); break; }
     case 'addteam': { const v=$('#addTeam').value; if(!v) return; ensurePool(v); render(); toast(`Tracking ${TM[v].name}`); break; }
     case 'swap': state.h2h=[state.h2h[1],state.h2h[0]]; render(); break;
     case 'h2hlog': setTab('results'); window.scrollTo({top:0}); break;
+    case 'share': shareBracket(); break;
+    case 'slatefav': case 'slatechaos': {
+      for(const g of slateGames()){ const p=winProb(g.away,g.home); state.slate[g.k] = ds.act==='slatefav' ? (p>=.5?g.away:g.home) : (Math.random()<p?g.away:g.home); }
+      render(); toast(ds.act==='slatefav'?'Favorites picked':`Rolled with ${chaosLabel(state.chaos||0).toLowerCase()}`); break; }
+    case 'slateclear': state.slate={}; render(); break;
+    case 'slateapply': {
+      const n = applySlate(state, state.slate); state.slate={}; render(); setTab('bracket'); window.scrollTo({top:0});
+      toast(n?`${n} pick${n>1?'s':''} played out. Here’s your bracket.`:'Pick at least one game first'); break; }
   }
 });
+document.addEventListener('input', e=>{ if(e.target.id==='chaos'){ const o=e.target.parentElement.querySelector('output'); if(o) o.textContent=chaosLabel(+e.target.value); } });
 document.addEventListener('change', e=>{
   const el=e.target;
   if(el.dataset.champ!==undefined){ const c=el.dataset.champ; if(el.value){ ensurePool(el.value); state.champs[c]=el.value; } else delete state.champs[c]; render(); }
+  if(el.id==='chaos'){ state.chaos=+el.value; render(); toast(`Model set to ${chaosLabel(state.chaos).toLowerCase()}`); return; }
   if(el.id==='h2hA'||el.id==='h2hB'){ const a=$('#h2hA').value,b=$('#h2hB').value; if(a===b){ toast('Pick two different teams'); return; } state.h2h=[a,b]; render(); }
 });
 document.addEventListener('submit', e=>{
@@ -906,20 +1125,19 @@ document.querySelectorAll('dialog').forEach(d=>d.addEventListener('click',e=>{ i
 function fmtDate(iso){const d=new Date(iso.length===10?iso+'T12:00:00':iso);return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}
 function renderDataLine(){
   const p=DATA.poll;
-  const pre = p.source==='CFP' ? 'Seeded from the committee’s CFP rankings' : `Seeded from the ${esc(p.name)}`;
-  const tail = p.source==='CFP' ? '' : ' The committee’s rankings replace it once they’re released in November.';
-  $('#dataLine').innerHTML = `${pre} released ${fmtDate(p.released)}${p.week?`, entering Week ${p.week}`:''}.${tail} <span style="opacity:.75">Data refreshed ${fmtDate(DATA.updated)}.</span>`;
+  $('#dataLine').innerHTML = `Built on the selection committee’s CFP rankings released ${fmtDate(p.released)}. <span style="opacity:.75">Scores and schedule refreshed ${fmtDate(DATA.updated)}.</span>`;
   $('#srcLine').innerHTML = `<strong>Data.</strong> Refreshed daily. ${(DATA.notes||[]).map(esc).join(' ')} Sources: ${(DATA.sources||[]).map(x=>`<a href="${esc(x.url)}" target="_blank" rel="noopener" style="color:inherit">${esc(x.title)}</a>`).join(', ')}.`;
 }
 renderDataLine(); render();
-function settle(){ booting=false; renderDataLine(); render(); if(dataChanged) toast(`Updated to the ${DATA.poll.name} from ${fmtDate(DATA.poll.released)}. Your scenario starts fresh from it.`); }
+function settle(){ booting=false; renderDataLine(); render(); if(dataChanged) toast(`New committee rankings from ${fmtDate(DATA.poll.released)}. Your scenario starts fresh from them.`); }
 fetch('data.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(d=>{
   if(d && Array.isArray(d.top25) && d.version!==DATA.version && (d.updated||'')>=(DATA.updated||'')){
     applyData(d); state=fresh(); dataChanged=false; loadSaved();
   }
 }).catch(()=>{}).finally(settle);
 const h = (location.hash||'').slice(1);
-setTab(['bracket','rankings','matchup','results'].includes(h)?h:'bracket');
+setTab(['bracket','slate','rankings','matchup','results'].includes(h)?h:'bracket');
+setInterval(renderRoad, 30000);
 </script>
 <script>
 (function(){
