@@ -14,7 +14,7 @@
 <link rel="icon" type="image/png" href="icons/icon-192.png">
 <style>
 html{-webkit-text-size-adjust:100%}
-:root{padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); background:linear-gradient(var(--band) 50%, var(--page) 50%)}
+:root{padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); background:linear-gradient(var(--band) 0 50vh, var(--page) 50vh)}
 body{margin:0; font-size:14px; min-height:100vh}
 img{max-width:100%}
 [hidden]{display:none!important}
@@ -322,6 +322,42 @@ footer p{max-width:80ch; margin:6px 0}
 .empty{padding:28px; text-align:center; color:var(--muted); background:var(--surface); border:1px dashed var(--line); border-radius:var(--r)}
 .was{color:var(--muted); font-size:12px}
 
+
+/* ---------- My Top 25 ---------- */
+.ballot-layout{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:20px; align-items:start}
+.meter{display:flex; align-items:center; gap:12px; margin-bottom:10px}
+.meter .track{flex:1; height:8px; border-radius:4px; background:var(--surface2); overflow:hidden}
+.meter .track i{display:block; height:100%; background:var(--accent); transition:width .25s}
+.meter b{font-family:var(--f-display); font-size:22px; font-weight:800; font-variant-numeric:tabular-nums}
+.slots{list-style:none; margin:0; padding:0; display:grid; gap:4px}
+.slots li{display:grid; grid-template-columns:30px auto minmax(0,1fr) auto auto; gap:8px; align-items:center; padding:5px 8px; border-radius:8px; background:var(--surface); border:1px solid var(--line); min-height:42px}
+.slots li.mine{background:color-mix(in oklab, var(--accent) 10%, var(--surface))}
+.slots li.empty-slot{border-style:dashed; background:transparent; color:var(--muted); grid-template-columns:30px minmax(0,1fr)}
+.slots li.next-slot{border-color:var(--accent); border-style:dashed; color:var(--accent)}
+.slots li.cut12{margin-bottom:10px; box-shadow:0 8px 0 -6px var(--accent)}
+.slots .n{font-family:var(--f-display); font-weight:800; font-size:20px; text-align:right}
+.slots .nm{font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.slots .nm small{color:var(--muted); font-weight:500; font-size:12px; margin-left:6px}
+.vs-cfp{font-family:var(--f-cond); font-weight:700; font-size:12.5px; white-space:nowrap}
+.cands{display:grid; grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); gap:6px}
+.cand{display:grid; grid-template-columns:auto minmax(0,1fr); gap:2px 8px; align-items:center; text-align:left; border:1px solid var(--line); background:var(--surface); border-radius:9px; padding:8px; min-width:0}
+.cand b{font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-size:14px}
+.cand small{grid-column:2; color:var(--muted); font-size:12px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.cand:hover{border-color:var(--accent)}
+.cand.on{background:color-mix(in oklab, var(--accent) 12%, var(--surface)); border-color:var(--accent)}
+.cand.on b::after{content:" ✓"; color:var(--accent)}
+.filters{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px}
+.filters button{border:1px solid var(--line); background:var(--surface); border-radius:999px; padding:4px 12px; font-size:13px; font-weight:600}
+.filters button[aria-pressed="true"]{background:var(--fg); color:var(--bg); border-color:var(--fg)}
+.diffs{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px}
+.mode-banner{display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; justify-content:space-between; background:color-mix(in oklab, var(--accent) 12%, var(--surface)); border:1px solid var(--accent); border-radius:var(--r); padding:10px 14px; margin-bottom:16px; font-size:14px}
+@media (max-width:900px){ .ballot-layout{grid-template-columns:minmax(0,1fr)} }
+@media (max-width:560px){
+  .slots li{grid-template-columns:28px auto minmax(0,1fr) auto; grid-template-areas:"n c nm acts" "n c vs acts"; row-gap:0}
+  .slots li .n{grid-area:n} .slots li .chip{grid-area:c} .slots li .nm{grid-area:nm} .slots li .vs-cfp{grid-area:vs} .slots li .acts{grid-area:acts}
+  .slots li.empty-slot{grid-template-areas:none}
+}
+
 @media (max-width: 900px){
   .grid2,.rank-layout{grid-template-columns:minmax(0,1fr)}
   .summary{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -367,6 +403,7 @@ footer p{max-width:80ch; margin:6px 0}
       <button class="tab" role="tab" data-tab="bracket" id="tabbtn-bracket">Bracket</button>
       <button class="tab" role="tab" data-tab="slate" id="tabbtn-slate">This week</button>
       <button class="tab" role="tab" data-tab="rankings" id="tabbtn-rankings">Committee Top 25</button>
+      <button class="tab" role="tab" data-tab="ballot" id="tabbtn-ballot">My Top 25</button>
       <button class="tab" role="tab" data-tab="matchup" id="tabbtn-matchup">Head-to-head</button>
       <button class="tab" role="tab" data-tab="results" id="tabbtn-results">Scores</button>
     </div>
@@ -380,6 +417,7 @@ footer p{max-width:80ch; margin:6px 0}
   <section id="view-bracket" data-view="bracket"></section>
   <section id="view-slate" data-view="slate" hidden></section>
   <section id="view-rankings" data-view="rankings" hidden></section>
+  <section id="view-ballot" data-view="ballot" hidden></section>
   <section id="view-matchup" data-view="matchup" hidden></section>
   <section id="view-results" data-view="results" hidden></section>
 </main>
@@ -543,6 +581,9 @@ function fresh(){
     picks: {},
     myTeam: null,
     h2h: ['miami','georgia'],
+    ballot: [],
+    mode: 'committee',
+    candFilter: 'all',
     slate: {},
     chaos: 0,
   };
@@ -552,7 +593,7 @@ function loadSaved(){
   let s=null; try{ s = JSON.parse(localStorage.getItem(KEY)||'null'); }catch(e){}
   if(!s || !Array.isArray(s.order)) return;
   if(s.dataVer===DATA.version) state = Object.assign(fresh(), s);
-  else { state = Object.assign(fresh(), {myTeam:s.myTeam||null, h2h:s.h2h||state.h2h, chaos:s.chaos||0}); dataChanged = true; }
+  else { state = Object.assign(fresh(), {myTeam:s.myTeam||null, h2h:s.h2h||state.h2h, chaos:s.chaos||0, ballot:(s.ballot||[]).filter(id=>TM[id])}); dataChanged = true; }
 }
 loadSaved();
 function save(){ if(booting) return; try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){} }
@@ -994,12 +1035,107 @@ async function shareBracket(){
   x.font=`700 26px ${C}`; x.fillText('NATIONAL CHAMPION · LAS VEGAS',72,1090);
   x.font=`900 104px ${D}`; x.fillText(champ?TM[champ].name.toUpperCase():'STILL DECIDING',68,1196,W-140);
   x.fillStyle=ink; x.font=`600 22px ${C}`; x.globalAlpha=.7; x.fillText('ivo-tech27.github.io/Chalkline',56,H-62); x.globalAlpha=1;
+  await shareCanvas(cv,'chalkline-bracket.png','My Chalkline bracket');
+}
+async function shareCanvas(cv, filename, title){
   const blob = await new Promise(r=>cv.toBlob(r,'image/png'));
-  const file = new File([blob],'chalkline-bracket.png',{type:'image/png'});
+  const file = new File([blob],filename,{type:'image/png'});
   if(navigator.canShare && navigator.canShare({files:[file]})){
-    try{ await navigator.share({files:[file], title:'My Chalkline bracket'}); return; }catch(e){ if(e && e.name==='AbortError') return; }
+    try{ await navigator.share({files:[file], title}); return; }catch(e){ if(e && e.name==='AbortError') return; }
   }
-  const url = cv.toDataURL('image/png'); $('#shareImg').src=url; $('#shareDl').href=url; $('#shareDlg').showModal();
+  const url = cv.toDataURL('image/png'); $('#shareImg').src=url; $('#shareDl').href=url; $('#shareDl').download=filename; $('#shareTitle').textContent='Share it'; $('#shareDlg').showModal();
+}
+
+
+/* ================= MY TOP 25 ================= */
+const POWER = new Set(['SEC','B1G','ACC','B12']);
+function candidates(){
+  const seen = new Set(), out = [];
+  const add = id=>{ if(TM[id] && !seen.has(id)){ seen.add(id); out.push(id); } };
+  POLL.forEach(r=>add(r.id));
+  (DATA.others||[]).forEach(r=>add(r.id));
+  const score = id=>{ const r=record(id); if(!r.known||r.w+r.l===0) return -99;
+    const t=TM[id]; return r.w - r.l*1.6 + (POWER.has(t.conf)||t.conf==='IND'?2.5:0); };
+  const rest = Object.keys(DATA.records||{}).filter(id=>TM[id]&&!seen.has(id)&&record(id).l<=4).sort((a,b)=>score(b)-score(a));
+  for(const id of rest){ if(out.length>=40) break; add(id); }
+  state.ballot.forEach(add); state.others.forEach(add); if(state.myTeam) add(state.myTeam);
+  return out;
+}
+function fieldFor(order){
+  const prev=state; const clone=JSON.parse(JSON.stringify(state));
+  clone.order=order.slice(0,25); clone.others=[]; clone.votes={}; state=clone; const F=field(); state=prev; return F;
+}
+function ballotDiff(id,i){
+  const cr = pollRank(id), me=i+1;
+  if(!cr) return '<span class="vs-cfp" style="color:var(--gold)">CFP NR</span>';
+  if(cr===me) return '<span class="vs-cfp" style="color:var(--muted)">= CFP</span>';
+  return `<span class="vs-cfp" style="color:${cr>me?'var(--good)':'var(--bad)'}">CFP ${cr} ${cr>me?'▲':'▼'}${Math.abs(cr-me)}</span>`;
+}
+function renderBallot(F){
+  const B = state.ballot, n=B.length, cands=candidates();
+  const slots = Array.from({length:25},(_,i)=>{
+    const id=B[i];
+    if(!id) return `<li class="empty-slot ${i===n?'next-slot':''} ${i===11?'cut12':''}"><span class="n">${i+1}</span><span>${i===n?'Tap a team to place it here':''}</span></li>`;
+    const t=TM[id];
+    return `<li class="${state.myTeam===id?'mine':''} ${i===11?'cut12':''}"><span class="n num">${i+1}</span>${chip(id)}<span class="nm">${esc(t.name)}<small>${record(id).txt}</small></span>${ballotDiff(id,i)}
+      <span class="acts"><button class="icon-btn" data-bmv="${id}" data-dir="-1" aria-label="Move ${esc(t.name)} up" ${i===0?'disabled':''}>▲</button><button class="icon-btn" data-bmv="${id}" data-dir="1" aria-label="Move ${esc(t.name)} down" ${i===n-1?'disabled':''}>▼</button><button class="icon-btn" data-brm="${id}" aria-label="Remove ${esc(t.name)}">✕</button></span></li>`;
+  }).join('');
+  const f = state.candFilter||'all';
+  const keep = id=> f==='cfp' ? !!pollRank(id) : f==='contenders' ? !pollRank(id) : f==='left' ? !B.includes(id) : true;
+  const list = cands.filter(keep);
+  const cardsHTML = list.map(id=>{const t=TM[id], cr=pollRank(id);
+    return `<button class="cand ${B.includes(id)?'on':''}" data-bpick="${id}" aria-pressed="${B.includes(id)}">${chip(id)}<b>${esc(t.name)}</b><small>${record(id).txt} · ${cr?'CFP No. '+cr:CONFS[t.conf]}</small></button>`}).join('');
+  const filt = [['all','All '+cands.length],['cfp','Committee 25'],['contenders','Contenders'],['left','Not on ballot']]
+    .map(([k,l])=>`<button data-cfilt="${k}" aria-pressed="${f===k}">${l}</button>`).join('');
+  let compare = `<p class="note" style="margin:0">Fill all 25 spots to compare your ballot with the committee and see the playoff field it creates.</p>`;
+  if(n===25){
+    const committeeF = fieldFor(POLL.map(r=>r.id)), myF = fieldFor(B);
+    const ins = myF.seeds.filter(id=>!committeeF.seeds.includes(id)), outs = committeeF.seeds.filter(id=>!myF.seeds.includes(id));
+    const moves = B.map((id,i)=>({id,d:(pollRank(id)||30)-(i+1)})).filter(x=>pollRank(x.id));
+    const higher = moves.filter(x=>x.d>0).sort((a,b)=>b.d-a.d).slice(0,4), lower = moves.filter(x=>x.d<0).sort((a,b)=>a.d-b.d).slice(0,4);
+    const onlyMine = B.filter(id=>!pollRank(id)), leftOff = POLL.map(r=>r.id).filter(id=>!B.includes(id));
+    const li = (id,txt)=>`<li><span class="l">${chip(id)}<span>${esc(TM[id].name)}</span></span><span class="num" style="color:var(--muted);font-size:13px">${txt}</span></li>`;
+    const agree = B.filter((id,i)=>pollRank(id)===i+1).length;
+    compare = `<p class="note" style="margin:0 0 12px">You match the committee on ${agree} of 25 spots and agree on ${12-ins.length} of 12 playoff teams.</p>
+      <div class="diffs">
+        <div><p class="sub-h">Your playoff field</p><div class="proj" style="grid-template-columns:1fr">${myF.seeds.map((id,i)=>`<div class="${ins.includes(id)?'newin':''}"><span class="n">${i+1}</span>${chip(id)}<span class="t">${esc(TM[id].name)}</span>${ins.includes(id)?'<span class="mv" style="color:var(--good)">IN</span>':''}</div>`).join('')}</div>
+          ${outs.length?`<p class="note" style="margin:8px 0 0">The committee’s field has ${outs.map(id=>esc(TM[id].name)).join(', ')} instead.</p>`:''}</div>
+        <div><p class="sub-h">You rank higher</p><ul class="mini-list">${higher.map(x=>li(x.id,`${x.d} spot${x.d>1?'s':''} above CFP`)).join('')||'<li style="color:var(--muted)">None</li>'}</ul>
+          <p class="sub-h">You rank lower</p><ul class="mini-list">${lower.map(x=>li(x.id,`${-x.d} spot${x.d<-1?'s':''} below CFP`)).join('')||'<li style="color:var(--muted)">None</li>'}</ul></div>
+        <div><p class="sub-h">Only on your ballot</p><ul class="mini-list">${onlyMine.map(id=>li(id,record(id).txt)).join('')||'<li style="color:var(--muted)">None</li>'}</ul>
+          <p class="sub-h">Committee team you left off</p><ul class="mini-list">${leftOff.map(id=>li(id,'CFP No. '+pollRank(id))).join('')||'<li style="color:var(--muted)">None</li>'}</ul></div>
+      </div>`;
+  }
+  $('#view-ballot').innerHTML = `
+    ${state.mode==='ballot'?`<div class="mode-banner"><span><b>Your Top 25 is driving the app.</b> The bracket, This Week and title odds all use your ballot.</span><button class="btn sm" data-act="reset">Back to the committee</button></div>`:''}
+    <div class="view-head"><div><h2>My Top 25</h2><p>Be the committee. Pick your 25 from the ${cands.length} teams in contention: everyone the committee ranked plus the best of the rest. Tap a team to add it to the next spot, then use the arrows to order your ballot.</p></div>
+      <div class="btns"><button class="btn" data-act="bfill">Start from the committee</button><button class="btn ghost" data-act="bclear">Clear</button><button class="btn" data-act="bshare" ${n?'':'disabled'}>Share my Top 25</button><button class="btn primary" data-act="buse" ${n===25?'':'disabled'}>${n===25?'Use my Top 25':`Add ${25-n} more`}</button></div></div>
+    <div class="ballot-layout">
+      <div class="panel"><div class="meter"><b>${n}/25</b><span class="track"><i style="width:${n*4}%"></i></span></div><ol class="slots">${slots}</ol></div>
+      <div class="panel"><h3>Contenders</h3><p class="note">The line after No. 12 on your ballot is the at-large cut, before conference champions are added.</p><div class="filters">${filt}</div><div class="cands">${cardsHTML||'<p class="note">Everyone here is already on your ballot.</p>'}</div></div>
+    </div>
+    <div class="panel" style="margin-top:20px"><h3>You vs. the committee</h3>${compare}</div>`;
+}
+async function shareBallot(){
+  try{ await document.fonts.ready; }catch(e){}
+  const W=1080,H=1350, cv=document.createElement('canvas'); cv.width=W; cv.height=H; const x=cv.getContext('2d');
+  const css=getComputedStyle(document.documentElement);
+  const band=(css.getPropertyValue('--band')||'#123526').trim(), band2=(css.getPropertyValue('--band2')||'#c8a24a').trim();
+  const ink = band.startsWith('#')&&band.length===7 ? onColor(band) : '#f3f6f0';
+  const D='"Big Shoulders Display", Impact, sans-serif', C='"Barlow Condensed", "Arial Narrow", sans-serif';
+  x.fillStyle=band; x.fillRect(0,0,W,H); x.globalAlpha=.08; x.fillStyle=ink; for(let i=1;i<10;i++) x.fillRect(i*W/10-1,0,2,H); x.globalAlpha=1;
+  x.fillStyle=band2; x.fillRect(0,H-46,W,8); x.fillRect(0,H-30,W,8);
+  x.fillStyle=ink; x.font=`700 26px ${C}`; x.globalAlpha=.75; x.fillText(`CHALKLINE · ${new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}).toUpperCase()}`,56,78); x.globalAlpha=1;
+  x.font=`900 104px ${D}`; x.fillText('MY TOP 25',52,178);
+  state.ballot.forEach((id,i)=>{ const colI = i<13?0:1, row = i<13?i:i-13, cx = 52+colI*500, cy = 240+row*72; const t=TM[id];
+    x.globalAlpha=.22; x.fillStyle='#000'; x.fillRect(cx,cy,470,62); x.globalAlpha=1; x.fillStyle=t.c1; x.fillRect(cx,cy,12,62);
+    x.fillStyle=ink; x.font=`800 40px ${D}`; x.textAlign='right'; x.fillText(String(i+1),cx+70,cy+46); x.textAlign='left';
+    x.font=`700 30px ${C}`; x.fillText(t.name.toUpperCase(),cx+88,cy+42,260);
+    const cr=pollRank(id); x.font=`600 22px ${C}`; x.globalAlpha=.7; x.textAlign='right'; x.fillText(cr?`CFP ${cr}`:'CFP NR',cx+455,cy+40); x.textAlign='left'; x.globalAlpha=1;
+    if(i===11){ x.fillStyle=band2; x.fillRect(cx,cy+66,470,3); }
+  });
+  x.fillStyle=ink; x.font=`600 22px ${C}`; x.globalAlpha=.7; x.fillText('Gold line = playoff cut · ivo-tech27.github.io/Chalkline',56,H-62); x.globalAlpha=1;
+  await shareCanvas(cv,'chalkline-top25.png','My Chalkline Top 25');
 }
 
 /* ================= DIALOGS ================= */
@@ -1049,7 +1185,7 @@ function render(){
   for(const k in state.picks) if(!R[k] || R[k].w!==state.picks[k]) delete state.picks[k];
   const R2 = resolve(F.seeds, state.picks);
   const odds = simulate(F.seeds, state.picks);
-  applyTheme(); renderHeader(F,R2,odds); renderBracket(F,R2,odds); renderSlate(F); renderRankings(F); renderMatchup(F); renderResults(); renderRoad();
+  applyTheme(); renderHeader(F,R2,odds); renderBracket(F,R2,odds); renderSlate(F); renderRankings(F); renderBallot(F); renderMatchup(F); renderResults(); renderRoad(); renderDataLine();
   save();
 }
 function setTab(tab){
@@ -1068,6 +1204,10 @@ document.addEventListener('click', e=>{
   if('close' in ds){ el.closest('dialog').close(); return; }
   if('setteam' in ds){ state.myTeam = ds.setteam||null; document.querySelectorAll('dialog[open]').forEach(d=>d.close()); render(); toast(ds.setteam?`${TM[ds.setteam].name} colors on`:'Back to the default look'); return; }
   if(ds.pick){ state.picks[ds.pick] = ds.team; render(); return; }
+  if(ds.bpick){ const B=state.ballot, i=B.indexOf(ds.bpick); if(i>-1) B.splice(i,1); else if(B.length<25) B.push(ds.bpick); else { toast('Your ballot is full. Remove a team first.'); return; } render(); return; }
+  if(ds.brm){ state.ballot=state.ballot.filter(x=>x!==ds.brm); render(); return; }
+  if(ds.bmv){ const B=state.ballot,i=B.indexOf(ds.bmv),j=i+(+ds.dir); if(j<0||j>=B.length) return; [B[i],B[j]]=[B[j],B[i]]; render(); return; }
+  if(ds.cfilt){ state.candFilter=ds.cfilt; render(); return; }
   if(ds.slate){ if(state.slate[ds.slate]===ds.team) delete state.slate[ds.slate]; else state.slate[ds.slate]=ds.team; render(); return; }
   if(ds.unpick){ delete state.picks[ds.unpick]; render(); return; }
   if(ds.open){ openDrawer(ds.open); return; }
@@ -1087,11 +1227,19 @@ document.addEventListener('click', e=>{
       for(const d of DEF){ const R=resolve(F.seeds,state.picks); const g=R[d.k]; if(g.w||!g.a||!g.b) continue;
         const p=winProb(g.a,g.b); state.picks[d.k] = ds.act==='chalk' ? (p>=.5?g.a:g.b) : (Math.random()<p?g.a:g.b); }
       render(); toast(ds.act==='chalk'?'Favorites picked':'Bracket simulated'); break; }
-    case 'reset': { const keep={myTeam:state.myTeam}; state=Object.assign(fresh(),keep); render(); toast('Reset to the committee ranking'); break; }
+    case 'reset': { const keep={myTeam:state.myTeam, ballot:state.ballot, chaos:state.chaos}; state=Object.assign(fresh(),keep); render(); toast('Reset to the committee ranking'); break; }
     case 'addteam': { const v=$('#addTeam').value; if(!v) return; ensurePool(v); render(); toast(`Tracking ${TM[v].name}`); break; }
     case 'swap': state.h2h=[state.h2h[1],state.h2h[0]]; render(); break;
     case 'h2hlog': setTab('results'); window.scrollTo({top:0}); break;
     case 'share': shareBracket(); break;
+    case 'bfill': state.ballot = POLL.map(r=>r.id).slice(0,25); render(); toast('Ballot starts from the committee. Now make it yours.'); break;
+    case 'bclear': state.ballot=[]; render(); break;
+    case 'bshare': shareBallot(); break;
+    case 'buse': {
+      if(state.ballot.length!==25) return;
+      const rest = candidates().filter(id=>!state.ballot.includes(id));
+      state.order = state.ballot.slice(); state.others = rest; state.votes = {}; state.picks = {}; state.slate = {}; state.mode='ballot';
+      render(); setTab('bracket'); window.scrollTo({top:0}); toast('Your Top 25 now seeds the bracket'); break; }
     case 'slatefav': case 'slatechaos': {
       for(const g of slateGames()){ const p=winProb(g.away,g.home); state.slate[g.k] = ds.act==='slatefav' ? (p>=.5?g.away:g.home) : (Math.random()<p?g.away:g.home); }
       render(); toast(ds.act==='slatefav'?'Favorites picked':`Rolled with ${chaosLabel(state.chaos||0).toLowerCase()}`); break; }
@@ -1125,7 +1273,8 @@ document.querySelectorAll('dialog').forEach(d=>d.addEventListener('click',e=>{ i
 function fmtDate(iso){const d=new Date(iso.length===10?iso+'T12:00:00':iso);return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}
 function renderDataLine(){
   const p=DATA.poll;
-  $('#dataLine').innerHTML = `Built on the selection committee’s CFP rankings released ${fmtDate(p.released)}. <span style="opacity:.75">Scores and schedule refreshed ${fmtDate(DATA.updated)}.</span>`;
+  const mine = state.mode==='ballot' ? ` <b>Right now the app is running on your own Top 25.</b> <button class="linklike" data-act="reset" style="text-decoration:underline">Back to the committee</button>` : '';
+  $('#dataLine').innerHTML = `Built on the selection committee’s CFP rankings released ${fmtDate(p.released)}. <span style="opacity:.75">Scores and schedule refreshed ${fmtDate(DATA.updated)}.</span>${mine}`;
   $('#srcLine').innerHTML = `<strong>Data.</strong> Refreshed daily. ${(DATA.notes||[]).map(esc).join(' ')} Sources: ${(DATA.sources||[]).map(x=>`<a href="${esc(x.url)}" target="_blank" rel="noopener" style="color:inherit">${esc(x.title)}</a>`).join(', ')}.`;
 }
 renderDataLine(); render();
@@ -1136,7 +1285,7 @@ fetch('data.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(d=>{
   }
 }).catch(()=>{}).finally(settle);
 const h = (location.hash||'').slice(1);
-setTab(['bracket','slate','rankings','matchup','results'].includes(h)?h:'bracket');
+setTab(['bracket','slate','rankings','ballot','matchup','results'].includes(h)?h:'bracket');
 setInterval(renderRoad, 30000);
 </script>
 <script>

@@ -1,5 +1,5 @@
 // Chalkline offline support: app shell from cache, data.json from the network first.
-const CACHE = 'chalkline-v2';
+const CACHE = 'chalkline-v3';
 const SHELL = ['./', 'index.html', 'manifest.webmanifest', 'icons/apple-touch-icon.png', 'icons/icon-192.png', 'icons/icon-512.png'];
 
 self.addEventListener('install', e => {
