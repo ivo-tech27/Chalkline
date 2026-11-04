@@ -1,6 +1,6 @@
 {
- "version": "2026-11-03-cfp1",
- "updated": "2026-11-04T15:00:00Z",
+ "version": "2026-11-03-cfp10",
+ "updated": "2026-11-04T02:45:39Z",
  "poll": {
   "source": "CFP",
   "name": "CFP Rankings",
@@ -185,7 +185,564 @@
   }
  ],
  "others": [],
- "records": {},
+ "records": {
+  "westernkentucky": {
+   "w": 3,
+   "l": 5
+  },
+  "delaware": {
+   "w": 4,
+   "l": 4
+  },
+  "missouristate": {
+   "w": 3,
+   "l": 5
+  },
+  "samhouston": {
+   "w": 1,
+   "l": 7
+  },
+  "middletennessee": {
+   "w": 4,
+   "l": 4
+  },
+  "kennesawstate": {
+   "w": 2,
+   "l": 6
+  },
+  "newmexicostate": {
+   "w": 3,
+   "l": 5
+  },
+  "jacksonvillestat": {
+   "w": 6,
+   "l": 2
+  },
+  "northtexas": {
+   "w": 6,
+   "l": 2
+  },
+  "floridaatlantic": {
+   "w": 5,
+   "l": 3
+  },
+  "jmu": {
+   "w": 7,
+   "l": 2
+  },
+  "troy": {
+   "w": 4,
+   "l": 4
+  },
+  "charlotte": {
+   "w": 1,
+   "l": 7
+  },
+  "tulane": {
+   "w": 4,
+   "l": 4
+  },
+  "ucf": {
+   "w": 4,
+   "l": 4
+  },
+  "baylor": {
+   "w": 5,
+   "l": 3
+  },
+  "sacramentostate": {
+   "w": 2,
+   "l": 7
+  },
+  "kentstate": {
+   "w": 3,
+   "l": 6
+  },
+  "unc": {
+   "w": 4,
+   "l": 4
+  },
+  "miami": {
+   "w": 8,
+   "l": 0
+  },
+  "usc": {
+   "w": 7,
+   "l": 2
+  },
+  "ohiost": {
+   "w": 6,
+   "l": 2
+  },
+  "georgia": {
+   "w": 7,
+   "l": 1
+  },
+  "florida": {
+   "w": 5,
+   "l": 3
+  },
+  "indiana": {
+   "w": 8,
+   "l": 1
+  },
+  "minn": {
+   "w": 5,
+   "l": 3
+  },
+  "navy": {
+   "w": 2,
+   "l": 6
+  },
+  "nd": {
+   "w": 7,
+   "l": 1
+  },
+  "cincy": {
+   "w": 5,
+   "l": 3
+  },
+  "utah": {
+   "w": 8,
+   "l": 0
+  },
+  "ucla": {
+   "w": 8,
+   "l": 0
+  },
+  "nevada": {
+   "w": 3,
+   "l": 5
+  },
+  "byu": {
+   "w": 7,
+   "l": 1
+  },
+  "asu": {
+   "w": 4,
+   "l": 4
+  },
+  "texas": {
+   "w": 6,
+   "l": 2
+  },
+  "msst": {
+   "w": 4,
+   "l": 4
+  },
+  "olemiss": {
+   "w": 6,
+   "l": 2
+  },
+  "auburn": {
+   "w": 4,
+   "l": 4
+  },
+  "ttu": {
+   "w": 7,
+   "l": 1
+  },
+  "arizona": {
+   "w": 6,
+   "l": 2
+  },
+  "wake": {
+   "w": 7,
+   "l": 1
+  },
+  "uva": {
+   "w": 4,
+   "l": 5
+  },
+  "cuse": {
+   "w": 4,
+   "l": 4
+  },
+  "smu": {
+   "w": 6,
+   "l": 2
+  },
+  "oregon": {
+   "w": 5,
+   "l": 3
+  },
+  "nw": {
+   "w": 6,
+   "l": 2
+  },
+  "boise": {
+   "w": 7,
+   "l": 1
+  },
+  "texasstate": {
+   "w": 4,
+   "l": 4
+  },
+  "arkansas": {
+   "w": 3,
+   "l": 5
+  },
+  "mizzou": {
+   "w": 6,
+   "l": 2
+  },
+  "isu": {
+   "w": 4,
+   "l": 4
+  },
+  "okst": {
+   "w": 5,
+   "l": 3
+  },
+  "iowa": {
+   "w": 6,
+   "l": 2
+  },
+  "wisc": {
+   "w": 5,
+   "l": 3
+  },
+  "ncst": {
+   "w": 4,
+   "l": 4
+  },
+  "cal": {
+   "w": 3,
+   "l": 6
+  },
+  "duke": {
+   "w": 6,
+   "l": 2
+  },
+  "bc": {
+   "w": 4,
+   "l": 4
+  },
+  "maryland": {
+   "w": 2,
+   "l": 6
+  },
+  "illinois": {
+   "w": 5,
+   "l": 3
+  },
+  "southflorida": {
+   "w": 6,
+   "l": 2
+  },
+  "uab": {
+   "w": 4,
+   "l": 4
+  },
+  "westernmichigan": {
+   "w": 6,
+   "l": 3
+  },
+  "bowlinggreen": {
+   "w": 2,
+   "l": 7
+  },
+  "rutgers": {
+   "w": 2,
+   "l": 6
+  },
+  "michigan": {
+   "w": 5,
+   "l": 3
+  },
+  "olddominion": {
+   "w": 2,
+   "l": 7
+  },
+  "marshall": {
+   "w": 5,
+   "l": 3
+  },
+  "colorado": {
+   "w": 3,
+   "l": 5
+  },
+  "ksu": {
+   "w": 4,
+   "l": 4
+  },
+  "georgiastate": {
+   "w": 4,
+   "l": 4
+  },
+  "coastalcarolina": {
+   "w": 3,
+   "l": 5
+  },
+  "airforce": {
+   "w": 6,
+   "l": 2
+  },
+  "uconn": {
+   "w": 4,
+   "l": 4
+  },
+  "eastcarolina": {
+   "w": 4,
+   "l": 4
+  },
+  "temple": {
+   "w": 2,
+   "l": 6
+  },
+  "southalabama": {
+   "w": 4,
+   "l": 4
+  },
+  "louisianatech": {
+   "w": 6,
+   "l": 2
+  },
+  "louisville": {
+   "w": 5,
+   "l": 3
+  },
+  "stanford": {
+   "w": 4,
+   "l": 5
+  },
+  "tcu": {
+   "w": 4,
+   "l": 4
+  },
+  "kansas": {
+   "w": 3,
+   "l": 5
+  },
+  "usu": {
+   "w": 3,
+   "l": 5
+  },
+  "csu": {
+   "w": 3,
+   "l": 5
+  },
+  "northdakotastate": {
+   "w": 7,
+   "l": 2
+  },
+  "utep": {
+   "w": 1,
+   "l": 7
+  },
+  "liberty": {
+   "w": 7,
+   "l": 1
+  },
+  "floridainternati": {
+   "w": 3,
+   "l": 5
+  },
+  "ulmonroe": {
+   "w": 1,
+   "l": 7
+  },
+  "southernmiss": {
+   "w": 3,
+   "l": 5
+  },
+  "sjsu": {
+   "w": 4,
+   "l": 5
+  },
+  "unm": {
+   "w": 7,
+   "l": 1
+  },
+  "oklahoma": {
+   "w": 4,
+   "l": 4
+  },
+  "scar": {
+   "w": 5,
+   "l": 3
+  },
+  "psu": {
+   "w": 4,
+   "l": 4
+  },
+  "purdue": {
+   "w": 3,
+   "l": 5
+  },
+  "georgiasouthern": {
+   "w": 4,
+   "l": 4
+  },
+  "appst": {
+   "w": 5,
+   "l": 3
+  },
+  "fsu": {
+   "w": 3,
+   "l": 5
+  },
+  "clemson": {
+   "w": 5,
+   "l": 3
+  },
+  "sdsu": {
+   "w": 4,
+   "l": 5
+  },
+  "wsu": {
+   "w": 1,
+   "l": 8
+  },
+  "pitt": {
+   "w": 6,
+   "l": 3
+  },
+  "gt": {
+   "w": 2,
+   "l": 6
+  },
+  "nebraska": {
+   "w": 5,
+   "l": 3
+  },
+  "washington": {
+   "w": 5,
+   "l": 3
+  },
+  "memphis": {
+   "w": 7,
+   "l": 2
+  },
+  "army": {
+   "w": 5,
+   "l": 3
+  },
+  "unlv": {
+   "w": 5,
+   "l": 3
+  },
+  "northernillinois": {
+   "w": 0,
+   "l": 8
+  },
+  "fresno": {
+   "w": 5,
+   "l": 3
+  },
+  "orst": {
+   "w": 5,
+   "l": 3
+  },
+  "akron": {
+   "w": 1,
+   "l": 7
+  },
+  "ohio": {
+   "w": 6,
+   "l": 2
+  },
+  "miamioh": {
+   "w": 5,
+   "l": 3
+  },
+  "buffalo": {
+   "w": 5,
+   "l": 3
+  },
+  "massachusetts": {
+   "w": 4,
+   "l": 4
+  },
+  "ballstate": {
+   "w": 3,
+   "l": 5
+  },
+  "toledo": {
+   "w": 6,
+   "l": 2
+  },
+  "easternmichigan": {
+   "w": 4,
+   "l": 5
+  },
+  "centralmichigan": {
+   "w": 3,
+   "l": 5
+  },
+  "utsa": {
+   "w": 7,
+   "l": 1
+  },
+  "vt": {
+   "w": 6,
+   "l": 2
+  },
+  "tulsa": {
+   "w": 4,
+   "l": 4
+  },
+  "tamu": {
+   "w": 4,
+   "l": 4
+  },
+  "arkansasstate": {
+   "w": 4,
+   "l": 4
+  },
+  "lsu": {
+   "w": 6,
+   "l": 2
+  },
+  "alabama": {
+   "w": 6,
+   "l": 2
+  },
+  "merrimack": {
+   "w": 4,
+   "l": 5
+  },
+  "houston": {
+   "w": 6,
+   "l": 2
+  },
+  "rice": {
+   "w": 1,
+   "l": 7
+  },
+  "vandy": {
+   "w": 3,
+   "l": 5
+  },
+  "louisiana": {
+   "w": 5,
+   "l": 3
+  },
+  "tenn": {
+   "w": 6,
+   "l": 2
+  },
+  "kentucky": {
+   "w": 7,
+   "l": 1
+  },
+  "msu": {
+   "w": 2,
+   "l": 6
+  },
+  "wvu": {
+   "w": 5,
+   "l": 3
+  },
+  "hawaii": {
+   "w": 2,
+   "l": 6
+  },
+  "wyoming": {
+   "w": 5,
+   "l": 3
+  }
+ },
  "games": [
   {
    "week": 8,
@@ -222,14 +779,167 @@
    "bs": 7,
    "ot": false,
    "note": "At Wisconsin"
+  },
+  {
+   "week": 9,
+   "a": "miami",
+   "as": 38,
+   "b": "unc",
+   "bs": 35,
+   "ot": false,
+   "note": "At North Carolina"
+  },
+  {
+   "week": 9,
+   "a": "usc",
+   "as": 30,
+   "b": "ohiost",
+   "bs": 18,
+   "ot": false,
+   "note": "At USC"
+  },
+  {
+   "week": 9,
+   "a": "georgia",
+   "as": 27,
+   "b": "florida",
+   "bs": 8,
+   "ot": false,
+   "note": ""
+  },
+  {
+   "week": 9,
+   "a": "indiana",
+   "as": 23,
+   "b": "minn",
+   "bs": 16,
+   "ot": true,
+   "note": "At Indiana"
+  },
+  {
+   "week": 9,
+   "a": "nd",
+   "as": 35,
+   "b": "navy",
+   "bs": 13,
+   "ot": false,
+   "note": ""
+  },
+  {
+   "week": 9,
+   "a": "utah",
+   "as": 49,
+   "b": "cincy",
+   "bs": 25,
+   "ot": false,
+   "note": "At Cincinnati"
+  },
+  {
+   "week": 9,
+   "a": "ucla",
+   "as": 27,
+   "b": "nevada",
+   "bs": 0,
+   "ot": false,
+   "note": "At UCLA"
+  },
+  {
+   "week": 9,
+   "a": "byu",
+   "as": 27,
+   "b": "asu",
+   "bs": 20,
+   "ot": false,
+   "note": "At BYU"
+  },
+  {
+   "week": 9,
+   "a": "texas",
+   "as": 31,
+   "b": "msst",
+   "bs": 3,
+   "ot": false,
+   "note": "At Texas"
+  },
+  {
+   "week": 9,
+   "a": "olemiss",
+   "as": 45,
+   "b": "auburn",
+   "bs": 15,
+   "ot": false,
+   "note": "At Ole Miss"
+  },
+  {
+   "week": 9,
+   "a": "ttu",
+   "as": 34,
+   "b": "arizona",
+   "bs": 26,
+   "ot": false,
+   "note": "At Texas Tech"
+  },
+  {
+   "week": 9,
+   "a": "wake",
+   "as": 51,
+   "b": "uva",
+   "bs": 7,
+   "ot": false,
+   "note": "At Wake Forest"
+  },
+  {
+   "week": 9,
+   "a": "oregon",
+   "as": 34,
+   "b": "nw",
+   "bs": 26,
+   "ot": false,
+   "note": "At Oregon"
+  },
+  {
+   "week": 9,
+   "a": "boise",
+   "as": 46,
+   "b": "texasstate",
+   "bs": 45,
+   "ot": false,
+   "note": "At Boise State"
+  },
+  {
+   "week": 9,
+   "a": "mizzou",
+   "as": 34,
+   "b": "arkansas",
+   "bs": 10,
+   "ot": false,
+   "note": "At Arkansas"
+  },
+  {
+   "week": 9,
+   "a": "iowa",
+   "as": 30,
+   "b": "wisc",
+   "bs": 0,
+   "ot": false,
+   "note": "At Iowa"
+  },
+  {
+   "week": 9,
+   "a": "scar",
+   "as": 42,
+   "b": "oklahoma",
+   "bs": 25,
+   "ot": false,
+   "note": "At Oklahoma"
   }
  ],
  "upcoming": [
   {
    "week": 10,
-   "date": "2026-11-07T17:00Z",
-   "away": "texas",
-   "home": "mizzou",
+   "date": "2026-11-07T03:15Z",
+   "away": "tcu",
+   "home": "arizona",
    "neutral": false,
    "tv": "ESPN"
   },
@@ -243,6 +953,30 @@
   },
   {
    "week": 10,
+   "date": "2026-11-07T17:00Z",
+   "away": "texas",
+   "home": "mizzou",
+   "neutral": false,
+   "tv": "ESPN"
+  },
+  {
+   "week": 10,
+   "date": "2026-11-07T17:00Z",
+   "away": "ucla",
+   "home": "minn",
+   "neutral": false,
+   "tv": "Fox"
+  },
+  {
+   "week": 10,
+   "date": "2026-11-07T20:00Z",
+   "away": "tamu",
+   "home": "scar",
+   "neutral": false,
+   "tv": "ESPN"
+  },
+  {
+   "week": 10,
    "date": "2026-11-07T20:30Z",
    "away": "alabama",
    "home": "lsu",
@@ -251,7 +985,39 @@
   },
   {
    "week": 10,
-   "date": "2026-11-08T00:15Z",
+   "date": "2026-11-07T20:30Z",
+   "away": "oregon",
+   "home": "ohiost",
+   "neutral": false,
+   "tv": "CBS"
+  },
+  {
+   "week": 10,
+   "date": "2026-11-07T20:30Z",
+   "away": "merrimack",
+   "home": "wake",
+   "neutral": false,
+   "tv": "ACC Network"
+  },
+  {
+   "week": 10,
+   "date": "2026-11-07T20:30Z",
+   "away": "cincy",
+   "home": "houston",
+   "neutral": false,
+   "tv": "Fox"
+  },
+  {
+   "week": 10,
+   "date": "2026-11-07T23:00Z",
+   "away": "boise",
+   "home": "csu",
+   "neutral": false,
+   "tv": "USA Net"
+  },
+  {
+   "week": 10,
+   "date": "2026-11-07T23:15Z",
    "away": "kentucky",
    "home": "tenn",
    "neutral": false,
@@ -272,18 +1038,502 @@
    "home": "olemiss",
    "neutral": false,
    "tv": "ABC"
+  },
+  {
+   "week": 10,
+   "date": "2026-11-08T00:30Z",
+   "away": "iowa",
+   "home": "nw",
+   "neutral": false,
+   "tv": "Fox"
+  },
+  {
+   "week": 10,
+   "date": "2026-11-08T00:45Z",
+   "away": "oklahoma",
+   "home": "florida",
+   "neutral": false,
+   "tv": "SEC Network"
+  },
+  {
+   "week": 10,
+   "date": "2026-11-08T02:30Z",
+   "away": "wvu",
+   "home": "ttu",
+   "neutral": false,
+   "tv": "ESPN"
   }
  ],
- "extraTeams": [],
+ "extraTeams": [
+  {
+   "id": "westernkentucky",
+   "name": "Western Kentucky",
+   "abbr": "WKU",
+   "mascot": "Hilltoppers",
+   "conf": "IND",
+   "c1": "#e13a3e",
+   "c2": "#ffffff"
+  },
+  {
+   "id": "delaware",
+   "name": "Delaware",
+   "abbr": "DEL",
+   "mascot": "Blue Hens",
+   "conf": "IND",
+   "c1": "#00539f",
+   "c2": "#ffd200"
+  },
+  {
+   "id": "missouristate",
+   "name": "Missouri State",
+   "abbr": "MOST",
+   "mascot": "Bears",
+   "conf": "IND",
+   "c1": "#5e0009",
+   "c2": "#ffffff"
+  },
+  {
+   "id": "samhouston",
+   "name": "Sam Houston",
+   "abbr": "SHSU",
+   "mascot": "Bearkats",
+   "conf": "IND",
+   "c1": "#f56423",
+   "c2": "#ffffff"
+  },
+  {
+   "id": "middletennessee",
+   "name": "Middle Tennessee",
+   "abbr": "MTSU",
+   "mascot": "Blue Raiders",
+   "conf": "IND",
+   "c1": "#036eb7",
+   "c2": "#ffffff"
+  },
+  {
+   "id": "kennesawstate",
+   "name": "Kennesaw State",
+   "abbr": "KENN",
+   "mascot": "Owls",
+   "conf": "IND",
+   "c1": "#fdbb30",
+   "c2": "#0b1315"
+  },
+  {
+   "id": "newmexicostate",
+   "name": "New Mexico State",
+   "abbr": "NMSU",
+   "mascot": "Aggies",
+   "conf": "IND",
+   "c1": "#7e141b",
+   "c2": "#231f20"
+  },
+  {
+   "id": "jacksonvillestat",
+   "name": "Jacksonville State",
+   "abbr": "JXST",
+   "mascot": "Gamecocks",
+   "conf": "IND",
+   "c1": "#cc0000",
+   "c2": "#000000"
+  },
+  {
+   "id": "northtexas",
+   "name": "North Texas",
+   "abbr": "UNT",
+   "mascot": "Mean Green",
+   "conf": "IND",
+   "c1": "#068f33",
+   "c2": "#ffffff"
+  },
+  {
+   "id": "floridaatlantic",
+   "name": "Florida Atlantic",
+   "abbr": "FAU",
+   "mascot": "Owls",
+   "conf": "IND",
+   "c1": "#003366",
+   "c2": "#cc0000"
+  },
+  {
+   "id": "troy",
+   "name": "Troy",
+   "abbr": "TROY",
+   "mascot": "Trojans",
+   "conf": "IND",
+   "c1": "#862633",
+   "c2": "#b1b1b1"
+  },
+  {
+   "id": "charlotte",
+   "name": "Charlotte",
+   "abbr": "CLT",
+   "mascot": "49ers",
+   "conf": "IND",
+   "c1": "#005035",
+   "c2": "#a49665"
+  },
+  {
+   "id": "sacramentostate",
+   "name": "Sacramento State",
+   "abbr": "SAC",
+   "mascot": "Hornets",
+   "conf": "IND",
+   "c1": "#00573C",
+   "c2": "#cdb97d"
+  },
+  {
+   "id": "kentstate",
+   "name": "Kent State",
+   "abbr": "KENT",
+   "mascot": "Golden Flashes",
+   "conf": "IND",
+   "c1": "#002664",
+   "c2": "#eaab00"
+  },
+  {
+   "id": "nevada",
+   "name": "Nevada",
+   "abbr": "NEV",
+   "mascot": "Wolf Pack",
+   "conf": "IND",
+   "c1": "#041e42",
+   "c2": "#8a8d8f"
+  },
+  {
+   "id": "texasstate",
+   "name": "Texas State",
+   "abbr": "TXST",
+   "mascot": "Bobcats",
+   "conf": "IND",
+   "c1": "#501214",
+   "c2": "#6a5638"
+  },
+  {
+   "id": "southflorida",
+   "name": "South Florida",
+   "abbr": "USF",
+   "mascot": "Bulls",
+   "conf": "IND",
+   "c1": "#006747",
+   "c2": "#cfc493"
+  },
+  {
+   "id": "uab",
+   "name": "UAB",
+   "abbr": "UAB",
+   "mascot": "Blazers",
+   "conf": "IND",
+   "c1": "#1a5632",
+   "c2": "#fdb913"
+  },
+  {
+   "id": "westernmichigan",
+   "name": "Western Michigan",
+   "abbr": "WMU",
+   "mascot": "Broncos",
+   "conf": "IND",
+   "c1": "#532e1f",
+   "c2": "#f1c500"
+  },
+  {
+   "id": "bowlinggreen",
+   "name": "Bowling Green",
+   "abbr": "BGSU",
+   "mascot": "Falcons",
+   "conf": "IND",
+   "c1": "#fd5000",
+   "c2": "#4f2c1d"
+  },
+  {
+   "id": "olddominion",
+   "name": "Old Dominion",
+   "abbr": "ODU",
+   "mascot": "Monarchs",
+   "conf": "IND",
+   "c1": "#003768",
+   "c2": "#a1d2f1"
+  },
+  {
+   "id": "marshall",
+   "name": "Marshall",
+   "abbr": "MRSH",
+   "mascot": "Thundering Herd",
+   "conf": "IND",
+   "c1": "#00b140",
+   "c2": "#000000"
+  },
+  {
+   "id": "georgiastate",
+   "name": "Georgia State",
+   "abbr": "GAST",
+   "mascot": "Panthers",
+   "conf": "IND",
+   "c1": "#0039a6",
+   "c2": "#ffffff"
+  },
+  {
+   "id": "coastalcarolina",
+   "name": "Coastal Carolina",
+   "abbr": "CCU",
+   "mascot": "Chanticleers",
+   "conf": "IND",
+   "c1": "#006f71",
+   "c2": "#a27752"
+  },
+  {
+   "id": "airforce",
+   "name": "Air Force",
+   "abbr": "AFA",
+   "mascot": "Falcons",
+   "conf": "IND",
+   "c1": "#003594",
+   "c2": "#ffffff"
+  },
+  {
+   "id": "uconn",
+   "name": "UConn",
+   "abbr": "CONN",
+   "mascot": "Huskies",
+   "conf": "IND",
+   "c1": "#0c2340",
+   "c2": "#a2aaad"
+  },
+  {
+   "id": "eastcarolina",
+   "name": "East Carolina",
+   "abbr": "ECU",
+   "mascot": "Pirates",
+   "conf": "IND",
+   "c1": "#582c83",
+   "c2": "#ffc72c"
+  },
+  {
+   "id": "temple",
+   "name": "Temple",
+   "abbr": "TEM",
+   "mascot": "Owls",
+   "conf": "IND",
+   "c1": "#a41e35",
+   "c2": "#ffffff"
+  },
+  {
+   "id": "southalabama",
+   "name": "South Alabama",
+   "abbr": "USA",
+   "mascot": "Jaguars",
+   "conf": "IND",
+   "c1": "#00205b",
+   "c2": "#bf0d3e"
+  },
+  {
+   "id": "louisianatech",
+   "name": "Louisiana Tech",
+   "abbr": "LT",
+   "mascot": "Bulldogs",
+   "conf": "IND",
+   "c1": "#003087",
+   "c2": "#cb333b"
+  },
+  {
+   "id": "northdakotastate",
+   "name": "North Dakota State",
+   "abbr": "NDSU",
+   "mascot": "Bison",
+   "conf": "IND",
+   "c1": "#01402A",
+   "c2": "#ffffff"
+  },
+  {
+   "id": "utep",
+   "name": "UTEP",
+   "abbr": "UTEP",
+   "mascot": "Miners",
+   "conf": "IND",
+   "c1": "#ff8200",
+   "c2": "#041e42"
+  },
+  {
+   "id": "floridainternati",
+   "name": "Florida International",
+   "abbr": "FIU",
+   "mascot": "Panthers",
+   "conf": "IND",
+   "c1": "#091f3f",
+   "c2": "#c3993f"
+  },
+  {
+   "id": "ulmonroe",
+   "name": "UL Monroe",
+   "abbr": "ULM",
+   "mascot": "Warhawks",
+   "conf": "IND",
+   "c1": "#840029",
+   "c2": "#fdb913"
+  },
+  {
+   "id": "southernmiss",
+   "name": "Southern Miss",
+   "abbr": "USM",
+   "mascot": "Golden Eagles",
+   "conf": "IND",
+   "c1": "#ffc72c",
+   "c2": "#231f20"
+  },
+  {
+   "id": "georgiasouthern",
+   "name": "Georgia Southern",
+   "abbr": "GASO",
+   "mascot": "Eagles",
+   "conf": "IND",
+   "c1": "#041e42",
+   "c2": "#a3aaae"
+  },
+  {
+   "id": "northernillinois",
+   "name": "Northern Illinois",
+   "abbr": "NIU",
+   "mascot": "Huskies",
+   "conf": "IND",
+   "c1": "#c8102e",
+   "c2": "#000000"
+  },
+  {
+   "id": "akron",
+   "name": "Akron",
+   "abbr": "AKR",
+   "mascot": "Zips",
+   "conf": "IND",
+   "c1": "#041e42",
+   "c2": "#c5b783"
+  },
+  {
+   "id": "ohio",
+   "name": "Ohio",
+   "abbr": "OHIO",
+   "mascot": "Bobcats",
+   "conf": "IND",
+   "c1": "#154734",
+   "c2": "#ffffff"
+  },
+  {
+   "id": "miamioh",
+   "name": "Miami (OH)",
+   "abbr": "M-OH",
+   "mascot": "RedHawks",
+   "conf": "IND",
+   "c1": "#c41230",
+   "c2": "#ffffff"
+  },
+  {
+   "id": "buffalo",
+   "name": "Buffalo",
+   "abbr": "BUFF",
+   "mascot": "Bulls",
+   "conf": "IND",
+   "c1": "#005bbb",
+   "c2": "#ffffff"
+  },
+  {
+   "id": "massachusetts",
+   "name": "Massachusetts",
+   "abbr": "MASS",
+   "mascot": "Minutemen",
+   "conf": "IND",
+   "c1": "#881c1c",
+   "c2": "#ffffff"
+  },
+  {
+   "id": "ballstate",
+   "name": "Ball State",
+   "abbr": "BALL",
+   "mascot": "Cardinals",
+   "conf": "IND",
+   "c1": "#ba0c2f",
+   "c2": "#ffffff"
+  },
+  {
+   "id": "easternmichigan",
+   "name": "Eastern Michigan",
+   "abbr": "EMU",
+   "mascot": "Eagles",
+   "conf": "IND",
+   "c1": "#006938",
+   "c2": "#ffffff"
+  },
+  {
+   "id": "centralmichigan",
+   "name": "Central Michigan",
+   "abbr": "CMU",
+   "mascot": "Chippewas",
+   "conf": "IND",
+   "c1": "#4c0027",
+   "c2": "#fbab18"
+  },
+  {
+   "id": "tulsa",
+   "name": "Tulsa",
+   "abbr": "TLSA",
+   "mascot": "Golden Hurricane",
+   "conf": "IND",
+   "c1": "#003595",
+   "c2": "#d0b787"
+  },
+  {
+   "id": "arkansasstate",
+   "name": "Arkansas State",
+   "abbr": "ARST",
+   "mascot": "Red Wolves",
+   "conf": "IND",
+   "c1": "#cc092f",
+   "c2": "#000000"
+  },
+  {
+   "id": "merrimack",
+   "name": "Merrimack",
+   "abbr": "MRMK",
+   "mascot": "Warriors",
+   "conf": "IND",
+   "c1": "#000000",
+   "c2": "#dddddd"
+  },
+  {
+   "id": "rice",
+   "name": "Rice",
+   "abbr": "RICE",
+   "mascot": "Owls",
+   "conf": "IND",
+   "c1": "#00205b",
+   "c2": "#c1c6c8"
+  },
+  {
+   "id": "louisiana",
+   "name": "Louisiana",
+   "abbr": "UL",
+   "mascot": "Ragin' Cajuns",
+   "conf": "IND",
+   "c1": "#ce181e",
+   "c2": "#000000"
+  },
+  {
+   "id": "wyoming",
+   "name": "Wyoming",
+   "abbr": "WYO",
+   "mascot": "Cowboys",
+   "conf": "IND",
+   "c1": "#492f24",
+   "c2": "#ffc425"
+  }
+ ],
  "notes": [],
  "sources": [
   {
-   "title": "CFP rankings, Nov. 3",
-   "url": "https://collegefootballplayoff.com/news/2026/11/3/rankings"
+   "title": "CFP rankings",
+   "url": "https://collegefootballplayoff.com/rankings"
   },
   {
-   "title": "NCAA.com",
-   "url": "https://www.ncaa.com/news/football/article/2026-11-03/miami-georgia-lead-first-college-football-playoff-rankings-2026"
+   "title": "ESPN scoreboard",
+   "url": "https://www.espn.com/college-football/scoreboard"
   }
  ]
 }
