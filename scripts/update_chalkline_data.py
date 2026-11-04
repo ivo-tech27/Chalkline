@@ -205,6 +205,13 @@ def main():
         if len(tids) > 1:
             notes.append(f"{len(tids)} teams tied at No. {rank}.")
 
+    # Keep only the extra teams and records the app will actually show.
+    shown = {r["id"] for r in top25} | {o["id"] for o in others}
+    shown |= {g["a"] for g in game_list} | {g["b"] for g in game_list}
+    shown |= {g["away"] for g in upcoming} | {g["home"] for g in upcoming}
+    extra = [t for t in resolve.extra.values() if t["id"] in shown]
+    records = {k: v for k, v in records.items() if k in resolve.ids or k in shown}
+
     new = {
         "version": version,
         "updated": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -214,7 +221,7 @@ def main():
         "records": records,
         "games": game_list,
         "upcoming": upcoming,
-        "extraTeams": list(resolve.extra.values()),
+        "extraTeams": extra,
         "notes": notes,
         "sources": [{"title": "CFP rankings", "url": "https://collegefootballplayoff.com/rankings"},
                     {"title": "ESPN scoreboard", "url": "https://www.espn.com/college-football/scoreboard"}],
