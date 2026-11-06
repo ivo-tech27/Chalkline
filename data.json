@@ -1,6 +1,6 @@
 {
  "version": "2026-11-03-cfp10",
- "updated": "2026-11-05T11:59:59Z",
+ "updated": "2026-11-06T11:56:22Z",
  "poll": {
   "source": "CFP",
   "name": "CFP Rankings",
@@ -187,7 +187,7 @@
  "others": [],
  "records": {
   "jmu": {
-   "w": 7,
+   "w": 8,
    "l": 2
   },
   "tulane": {
@@ -496,7 +496,7 @@
   },
   "utsa": {
    "w": 7,
-   "l": 1
+   "l": 2
   },
   "vt": {
    "w": 6,
