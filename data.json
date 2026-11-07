@@ -1,6 +1,6 @@
 {
  "version": "2026-11-03-cfp10",
- "updated": "2026-11-06T11:56:22Z",
+ "updated": "2026-11-07T11:45:07Z",
  "poll": {
   "source": "CFP",
   "name": "CFP Rankings",
@@ -159,7 +159,7 @@
    "id": "arizona",
    "rank": 22,
    "prev": 0,
-   "w": 6,
+   "w": 7,
    "l": 2
   },
   {
@@ -256,7 +256,7 @@
   },
   "nevada": {
    "w": 3,
-   "l": 5
+   "l": 6
   },
   "byu": {
    "w": 7,
@@ -287,7 +287,7 @@
    "l": 1
   },
   "arizona": {
-   "w": 6,
+   "w": 7,
    "l": 2
   },
   "wake": {
@@ -303,7 +303,7 @@
    "l": 4
   },
   "smu": {
-   "w": 6,
+   "w": 7,
    "l": 2
   },
   "oregon": {
@@ -367,7 +367,7 @@
    "l": 6
   },
   "illinois": {
-   "w": 5,
+   "w": 6,
    "l": 3
   },
   "rutgers": {
@@ -396,7 +396,7 @@
   },
   "tcu": {
    "w": 4,
-   "l": 4
+   "l": 5
   },
   "kansas": {
    "w": 3,
@@ -415,7 +415,7 @@
    "l": 1
   },
   "unm": {
-   "w": 7,
+   "w": 8,
    "l": 1
   },
   "oklahoma": {
@@ -464,7 +464,7 @@
   },
   "nebraska": {
    "w": 5,
-   "l": 3
+   "l": 4
   },
   "washington": {
    "w": 5,
@@ -500,7 +500,7 @@
   },
   "vt": {
    "w": 6,
-   "l": 2
+   "l": 3
   },
   "tamu": {
    "w": 4,
@@ -732,17 +732,18 @@
    "bs": 25,
    "ot": false,
    "note": "At Oklahoma"
+  },
+  {
+   "week": 10,
+   "a": "arizona",
+   "as": 29,
+   "b": "tcu",
+   "bs": 28,
+   "ot": false,
+   "note": "At Arizona"
   }
  ],
  "upcoming": [
-  {
-   "week": 10,
-   "date": "2026-11-07T03:15Z",
-   "away": "tcu",
-   "home": "arizona",
-   "neutral": false,
-   "tv": "ESPN"
-  },
   {
    "week": 10,
    "date": "2026-11-07T17:00Z",
