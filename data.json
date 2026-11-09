@@ -1,6 +1,6 @@
 {
  "version": "2026-11-03-cfp10",
- "updated": "2026-11-08T11:45:02Z",
+ "updated": "2026-11-09T12:00:06Z",
  "poll": {
   "source": "CFP",
   "name": "CFP Rankings",
@@ -897,70 +897,6 @@
   },
   {
    "week": 11,
-   "date": "2026-11-14T05:00Z",
-   "away": "mizzou",
-   "home": "georgia",
-   "neutral": false,
-   "tv": "ABC"
-  },
-  {
-   "week": 11,
-   "date": "2026-11-14T05:00Z",
-   "away": "utah",
-   "home": "arizona",
-   "neutral": false,
-   "tv": ""
-  },
-  {
-   "week": 11,
-   "date": "2026-11-14T05:00Z",
-   "away": "florida",
-   "home": "kentucky",
-   "neutral": false,
-   "tv": "ESPN"
-  },
-  {
-   "week": 11,
-   "date": "2026-11-14T05:00Z",
-   "away": "texas",
-   "home": "lsu",
-   "neutral": false,
-   "tv": "ABC"
-  },
-  {
-   "week": 11,
-   "date": "2026-11-14T05:00Z",
-   "away": "baylor",
-   "home": "byu",
-   "neutral": false,
-   "tv": ""
-  },
-  {
-   "week": 11,
-   "date": "2026-11-14T05:00Z",
-   "away": "olemiss",
-   "home": "oklahoma",
-   "neutral": false,
-   "tv": ""
-  },
-  {
-   "week": 11,
-   "date": "2026-11-14T05:00Z",
-   "away": "tenn",
-   "home": "tamu",
-   "neutral": false,
-   "tv": ""
-  },
-  {
-   "week": 11,
-   "date": "2026-11-14T05:00Z",
-   "away": "ttu",
-   "home": "okst",
-   "neutral": false,
-   "tv": ""
-  },
-  {
-   "week": 11,
    "date": "2026-11-14T17:00Z",
    "away": "duke",
    "home": "miami",
@@ -981,7 +917,7 @@
    "away": "wake",
    "home": "smu",
    "neutral": false,
-   "tv": ""
+   "tv": "ESPN"
   },
   {
    "week": 11,
@@ -993,11 +929,35 @@
   },
   {
    "week": 11,
+   "date": "2026-11-14T20:00Z",
+   "away": "tenn",
+   "home": "tamu",
+   "neutral": false,
+   "tv": "ESPN"
+  },
+  {
+   "week": 11,
+   "date": "2026-11-14T20:30Z",
+   "away": "mizzou",
+   "home": "georgia",
+   "neutral": false,
+   "tv": "ABC"
+  },
+  {
+   "week": 11,
    "date": "2026-11-14T20:30Z",
    "away": "usc",
    "home": "indiana",
    "neutral": false,
    "tv": "CBS"
+  },
+  {
+   "week": 11,
+   "date": "2026-11-14T20:30Z",
+   "away": "baylor",
+   "home": "byu",
+   "neutral": false,
+   "tv": "Fox"
   },
   {
    "week": 11,
@@ -1017,11 +977,43 @@
   },
   {
    "week": 11,
+   "date": "2026-11-14T21:15Z",
+   "away": "olemiss",
+   "home": "oklahoma",
+   "neutral": false,
+   "tv": "SEC Network"
+  },
+  {
+   "week": 11,
    "date": "2026-11-14T23:00Z",
    "away": "orst",
    "home": "boise",
    "neutral": false,
    "tv": "USA Net"
+  },
+  {
+   "week": 11,
+   "date": "2026-11-14T23:15Z",
+   "away": "florida",
+   "home": "kentucky",
+   "neutral": false,
+   "tv": "ESPN"
+  },
+  {
+   "week": 11,
+   "date": "2026-11-15T00:30Z",
+   "away": "utah",
+   "home": "arizona",
+   "neutral": false,
+   "tv": "Fox"
+  },
+  {
+   "week": 11,
+   "date": "2026-11-15T00:30Z",
+   "away": "texas",
+   "home": "lsu",
+   "neutral": false,
+   "tv": "ABC"
   },
   {
    "week": 11,
@@ -1038,6 +1030,14 @@
    "home": "arkansas",
    "neutral": false,
    "tv": "SEC Network"
+  },
+  {
+   "week": 11,
+   "date": "2026-11-15T02:30Z",
+   "away": "ttu",
+   "home": "okst",
+   "neutral": false,
+   "tv": "ESPN"
   }
  ],
  "extraTeams": [
