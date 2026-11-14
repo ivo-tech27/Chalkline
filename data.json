@@ -1,6 +1,6 @@
 {
  "version": "2026-11-10-cfp11",
- "updated": "2026-11-13T11:59:37Z",
+ "updated": "2026-11-14T11:45:21Z",
  "poll": {
   "source": "CFP",
   "name": "CFP Rankings",
@@ -33,7 +33,7 @@
    "id": "ucla",
    "rank": 4,
    "prev": 8,
-   "w": 9,
+   "w": 10,
    "l": 0
   },
   {
@@ -104,7 +104,7 @@
    "rank": 14,
    "prev": 17,
    "w": 7,
-   "l": 2
+   "l": 3
   },
   {
    "id": "iowa",
@@ -260,7 +260,7 @@
    "l": 0
   },
   "ucla": {
-   "w": 9,
+   "w": 10,
    "l": 0
   },
   "nevada": {
@@ -377,7 +377,7 @@
   },
   "illinois": {
    "w": 6,
-   "l": 3
+   "l": 4
   },
   "rutgers": {
    "w": 2,
@@ -388,7 +388,7 @@
    "l": 4
   },
   "colorado": {
-   "w": 3,
+   "w": 4,
    "l": 6
   },
   "ksu": {
@@ -448,7 +448,7 @@
    "l": 4
   },
   "fsu": {
-   "w": 4,
+   "w": 5,
    "l": 5
   },
   "clemson": {
@@ -465,7 +465,7 @@
   },
   "pitt": {
    "w": 6,
-   "l": 3
+   "l": 4
   },
   "gt": {
    "w": 2,
@@ -529,7 +529,7 @@
   },
   "houston": {
    "w": 7,
-   "l": 2
+   "l": 3
   },
   "vandy": {
    "w": 4,
@@ -553,42 +553,6 @@
   }
  },
  "games": [
-  {
-   "week": 8,
-   "a": "ucf",
-   "as": 39,
-   "b": "byu",
-   "bs": 31,
-   "ot": true,
-   "note": "At UCF"
-  },
-  {
-   "week": 8,
-   "a": "cincy",
-   "as": 37,
-   "b": "ttu",
-   "bs": 24,
-   "ot": false,
-   "note": ""
-  },
-  {
-   "week": 8,
-   "a": "texas",
-   "as": 34,
-   "b": "olemiss",
-   "bs": 27,
-   "ot": false,
-   "note": "At Texas"
-  },
-  {
-   "week": 8,
-   "a": "wisc",
-   "as": 24,
-   "b": "usc",
-   "bs": 7,
-   "ot": false,
-   "note": "At Wisconsin"
-  },
   {
    "week": 9,
    "a": "miami",
@@ -894,25 +858,27 @@
    "bs": 28,
    "ot": false,
    "note": "At Kansas State"
+  },
+  {
+   "week": 11,
+   "a": "ucla",
+   "as": 22,
+   "b": "illinois",
+   "bs": 14,
+   "ot": false,
+   "note": "At UCLA"
+  },
+  {
+   "week": 11,
+   "a": "colorado",
+   "as": 42,
+   "b": "houston",
+   "bs": 32,
+   "ot": false,
+   "note": "At Colorado"
   }
  ],
  "upcoming": [
-  {
-   "week": 11,
-   "date": "2026-11-14T02:00Z",
-   "away": "illinois",
-   "home": "ucla",
-   "neutral": false,
-   "tv": "Fox"
-  },
-  {
-   "week": 11,
-   "date": "2026-11-14T03:15Z",
-   "away": "houston",
-   "home": "colorado",
-   "neutral": false,
-   "tv": "ESPN"
-  },
   {
    "week": 11,
    "date": "2026-11-14T17:00Z",
@@ -980,26 +946,10 @@
   {
    "week": 11,
    "date": "2026-11-14T20:30Z",
-   "away": "baylor",
-   "home": "byu",
-   "neutral": false,
-   "tv": "Fox"
-  },
-  {
-   "week": 11,
-   "date": "2026-11-14T20:30Z",
    "away": "michigan",
    "home": "oregon",
    "neutral": false,
    "tv": "FS1"
-  },
-  {
-   "week": 11,
-   "date": "2026-11-14T21:15Z",
-   "away": "olemiss",
-   "home": "oklahoma",
-   "neutral": false,
-   "tv": "SEC Network"
   },
   {
    "week": 11,
@@ -1019,9 +969,9 @@
   },
   {
    "week": 11,
-   "date": "2026-11-15T00:30Z",
-   "away": "utah",
-   "home": "arizona",
+   "date": "2026-11-15T00:00Z",
+   "away": "baylor",
+   "home": "byu",
    "neutral": false,
    "tv": "Fox"
   },
@@ -1056,6 +1006,14 @@
    "home": "okst",
    "neutral": false,
    "tv": "ESPN"
+  },
+  {
+   "week": 11,
+   "date": "2026-11-15T03:30Z",
+   "away": "utah",
+   "home": "arizona",
+   "neutral": false,
+   "tv": "Fox"
   }
  ],
  "extraTeams": [
