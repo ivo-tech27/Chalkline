@@ -1,6 +1,6 @@
 {
  "version": "2026-11-10-cfp11",
- "updated": "2026-11-15T11:46:50Z",
+ "updated": "2026-11-16T12:17:26Z",
  "poll": {
   "source": "CFP",
   "name": "CFP Rankings",
@@ -139,7 +139,7 @@
    "rank": 19,
    "prev": 10,
    "w": 6,
-   "l": 3
+   "l": 4
   },
   {
    "id": "ohiost",
@@ -285,7 +285,7 @@
   },
   "olemiss": {
    "w": 6,
-   "l": 3
+   "l": 4
   },
   "auburn": {
    "w": 6,
@@ -428,7 +428,7 @@
    "l": 2
   },
   "oklahoma": {
-   "w": 5,
+   "w": 6,
    "l": 4
   },
   "scar": {
@@ -550,6 +550,14 @@
   "wvu": {
    "w": 5,
    "l": 5
+  },
+  "wofford": {
+   "w": 5,
+   "l": 6
+  },
+  "chattanooga": {
+   "w": 7,
+   "l": 4
   }
  },
  "games": [
@@ -1029,16 +1037,201 @@
    "bs": 41,
    "ot": false,
    "note": "At Boise State"
+  },
+  {
+   "week": 11,
+   "a": "oklahoma",
+   "as": 24,
+   "b": "olemiss",
+   "bs": 17,
+   "ot": false,
+   "note": "At Oklahoma"
   }
  ],
  "upcoming": [
   {
-   "week": 11,
-   "date": "2026-11-15T18:00Z",
-   "away": "olemiss",
-   "home": "oklahoma",
+   "week": 12,
+   "date": "2026-11-21T01:00Z",
+   "away": "oregon",
+   "home": "msu",
+   "neutral": false,
+   "tv": "Fox"
+  },
+  {
+   "week": 12,
+   "date": "2026-11-21T17:00Z",
+   "away": "byu",
+   "home": "kansas",
+   "neutral": false,
+   "tv": "ABC"
+  },
+  {
+   "week": 12,
+   "date": "2026-11-21T17:00Z",
+   "away": "wake",
+   "home": "gt",
+   "neutral": false,
+   "tv": "ESPN"
+  },
+  {
+   "week": 12,
+   "date": "2026-11-21T17:00Z",
+   "away": "wofford",
+   "home": "olemiss",
+   "neutral": false,
+   "tv": "SECN+"
+  },
+  {
+   "week": 12,
+   "date": "2026-11-21T17:00Z",
+   "away": "ohiost",
+   "home": "nebraska",
+   "neutral": false,
+   "tv": "Fox"
+  },
+  {
+   "week": 12,
+   "date": "2026-11-21T17:00Z",
+   "away": "vandy",
+   "home": "florida",
    "neutral": false,
    "tv": "SEC Network"
+  },
+  {
+   "week": 12,
+   "date": "2026-11-21T18:00Z",
+   "away": "houston",
+   "home": "wvu",
+   "neutral": false,
+   "tv": "TNT"
+  },
+  {
+   "week": 12,
+   "date": "2026-11-21T19:00Z",
+   "away": "chattanooga",
+   "home": "alabama",
+   "neutral": false,
+   "tv": "SECN+"
+  },
+  {
+   "week": 12,
+   "date": "2026-11-21T19:30Z",
+   "away": "iowa",
+   "home": "illinois",
+   "neutral": false,
+   "tv": "BTN"
+  },
+  {
+   "week": 12,
+   "date": "2026-11-21T20:30Z",
+   "away": "ucla",
+   "home": "michigan",
+   "neutral": false,
+   "tv": "CBS"
+  },
+  {
+   "week": 12,
+   "date": "2026-11-21T20:30Z",
+   "away": "arkansas",
+   "home": "texas",
+   "neutral": false,
+   "tv": "ESPN"
+  },
+  {
+   "week": 12,
+   "date": "2026-11-21T20:30Z",
+   "away": "lsu",
+   "home": "tenn",
+   "neutral": false,
+   "tv": "ABC"
+  },
+  {
+   "week": 12,
+   "date": "2026-11-21T20:30Z",
+   "away": "indiana",
+   "home": "washington",
+   "neutral": false,
+   "tv": "Peacock"
+  },
+  {
+   "week": 12,
+   "date": "2026-11-21T20:30Z",
+   "away": "ttu",
+   "home": "baylor",
+   "neutral": false,
+   "tv": "Fox"
+  },
+  {
+   "week": 12,
+   "date": "2026-11-21T23:15Z",
+   "away": "maryland",
+   "home": "usc",
+   "neutral": false,
+   "tv": "BTN"
+  },
+  {
+   "week": 12,
+   "date": "2026-11-22T00:00Z",
+   "away": "vt",
+   "home": "miami",
+   "neutral": false,
+   "tv": "ESPN"
+  },
+  {
+   "week": 12,
+   "date": "2026-11-22T00:00Z",
+   "away": "arizona",
+   "home": "ksu",
+   "neutral": false,
+   "tv": "FS1"
+  },
+  {
+   "week": 12,
+   "date": "2026-11-22T00:30Z",
+   "away": "georgia",
+   "home": "scar",
+   "neutral": false,
+   "tv": "ABC"
+  },
+  {
+   "week": 12,
+   "date": "2026-11-22T00:30Z",
+   "away": "smu",
+   "home": "nd",
+   "neutral": false,
+   "tv": "NBC"
+  },
+  {
+   "week": 12,
+   "date": "2026-11-22T00:30Z",
+   "away": "kentucky",
+   "home": "mizzou",
+   "neutral": false,
+   "tv": "SEC Network"
+  },
+  {
+   "week": 12,
+   "date": "2026-11-22T02:00Z",
+   "away": "utah",
+   "home": "tcu",
+   "neutral": false,
+   "tv": "Fox"
+  },
+  {
+   "week": 12,
+   "date": "2026-11-22T02:30Z",
+   "away": "sdsu",
+   "home": "boise",
+   "neutral": false,
+   "tv": "USA Net"
+  },
+  {
+   "week": 12,
+   "date": "2026-11-22T03:15Z",
+   "away": "okst",
+   "home": "asu",
+   "neutral": false,
+   "tv": "ESPN"
   }
  ],
  "extraTeams": [
@@ -1068,6 +1261,24 @@
    "conf": "IND",
    "c1": "#000000",
    "c2": "#dddddd"
+  },
+  {
+   "id": "wofford",
+   "name": "Wofford",
+   "abbr": "WOF",
+   "mascot": "Terriers",
+   "conf": "IND",
+   "c1": "#533B23",
+   "c2": "#f0f0f0"
+  },
+  {
+   "id": "chattanooga",
+   "name": "Chattanooga",
+   "abbr": "UTC",
+   "mascot": "Mocs",
+   "conf": "IND",
+   "c1": "#00386b",
+   "c2": "#dca71d"
   }
  ],
  "notes": [],
