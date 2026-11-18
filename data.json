@@ -1,194 +1,210 @@
 {
- "version": "2026-11-10-cfp11",
- "updated": "2026-11-16T12:17:26Z",
+ "version": "2026-11-17-cfp12",
+ "updated": "2026-11-18T12:04:16Z",
  "poll": {
   "source": "CFP",
   "name": "CFP Rankings",
-  "released": "2026-11-10",
-  "week": 11
+  "released": "2026-11-17",
+  "week": 12
  },
  "top25": [
   {
    "id": "georgia",
    "rank": 1,
-   "prev": 2,
+   "prev": 1,
    "w": 9,
    "l": 1
   },
   {
    "id": "utah",
    "rank": 2,
-   "prev": 3,
+   "prev": 2,
    "w": 10,
    "l": 0
   },
   {
    "id": "alabama",
    "rank": 3,
-   "prev": 5,
+   "prev": 3,
    "w": 8,
    "l": 2
   },
   {
    "id": "ucla",
    "rank": 4,
-   "prev": 8,
+   "prev": 4,
    "w": 10,
    "l": 0
   },
   {
-   "id": "nd",
-   "rank": 5,
-   "prev": 11,
-   "w": 9,
-   "l": 1
-  },
-  {
    "id": "texas",
-   "rank": 6,
-   "prev": 7,
+   "rank": 5,
+   "prev": 6,
    "w": 8,
    "l": 2
   },
   {
+   "id": "nd",
+   "rank": 6,
+   "prev": 5,
+   "w": 9,
+   "l": 1
+  },
+  {
    "id": "miami",
    "rank": 7,
-   "prev": 1,
+   "prev": 7,
+   "w": 9,
+   "l": 1
+  },
+  {
+   "id": "indiana",
+   "rank": 8,
+   "prev": 9,
    "w": 9,
    "l": 1
   },
   {
    "id": "tenn",
-   "rank": 8,
-   "prev": 13,
+   "rank": 9,
+   "prev": 8,
    "w": 8,
    "l": 2
-  },
-  {
-   "id": "indiana",
-   "rank": 9,
-   "prev": 4,
-   "w": 9,
-   "l": 1
   },
   {
    "id": "byu",
    "rank": 10,
-   "prev": 9,
+   "prev": 10,
    "w": 8,
    "l": 2
   },
   {
-   "id": "kentucky",
+   "id": "wake",
    "rank": 11,
-   "prev": 6,
-   "w": 7,
-   "l": 3
+   "prev": 13,
+   "w": 9,
+   "l": 1
   },
   {
    "id": "ttu",
    "rank": 12,
-   "prev": 15,
+   "prev": 12,
    "w": 9,
    "l": 1
   },
   {
-   "id": "wake",
+   "id": "oregon",
    "rank": 13,
    "prev": 16,
-   "w": 9,
-   "l": 1
+   "w": 7,
+   "l": 3
   },
   {
-   "id": "houston",
+   "id": "ohiost",
    "rank": 14,
-   "prev": 17,
+   "prev": 20,
    "w": 7,
    "l": 3
   },
   {
    "id": "iowa",
    "rank": 15,
-   "prev": 19,
+   "prev": 15,
    "w": 8,
    "l": 2
   },
   {
-   "id": "oregon",
+   "id": "kentucky",
    "rank": 16,
-   "prev": 23,
-   "w": 7,
-   "l": 3
-  },
-  {
-   "id": "scar",
-   "rank": 17,
-   "prev": 21,
-   "w": 6,
-   "l": 4
-  },
-  {
-   "id": "usc",
-   "rank": 18,
-   "prev": 20,
-   "w": 7,
-   "l": 3
-  },
-  {
-   "id": "olemiss",
-   "rank": 19,
-   "prev": 10,
-   "w": 6,
-   "l": 4
-  },
-  {
-   "id": "ohiost",
-   "rank": 20,
-   "prev": 12,
-   "w": 7,
-   "l": 3
-  },
-  {
-   "id": "lsu",
-   "rank": 21,
-   "prev": 14,
-   "w": 6,
-   "l": 4
-  },
-  {
-   "id": "mizzou",
-   "rank": 22,
-   "prev": 18,
-   "w": 6,
-   "l": 4
-  },
-  {
-   "id": "arizona",
-   "rank": 23,
-   "prev": 22,
+   "prev": 11,
    "w": 7,
    "l": 3
   },
   {
    "id": "boise",
-   "rank": 24,
-   "prev": 25,
+   "rank": 17,
+   "prev": 24,
    "w": 9,
    "l": 1
   },
   {
-   "id": "okst",
-   "rank": 25,
+   "id": "usc",
+   "rank": 18,
+   "prev": 18,
+   "w": 7,
+   "l": 3
+  },
+  {
+   "id": "arizona",
+   "rank": 19,
+   "prev": 23,
+   "w": 7,
+   "l": 3
+  },
+  {
+   "id": "houston",
+   "rank": 20,
+   "prev": 14,
+   "w": 7,
+   "l": 3
+  },
+  {
+   "id": "scar",
+   "rank": 21,
+   "prev": 17,
+   "w": 6,
+   "l": 4
+  },
+  {
+   "id": "oklahoma",
+   "rank": 22,
    "prev": 0,
+   "w": 6,
+   "l": 4
+  },
+  {
+   "id": "louisville",
+   "rank": 23,
+   "prev": 0,
+   "w": 7,
+   "l": 3
+  },
+  {
+   "id": "florida",
+   "rank": 24,
+   "prev": 0,
+   "w": 6,
+   "l": 4
+  },
+  {
+   "id": "olemiss",
+   "rank": 25,
+   "prev": 19,
    "w": 6,
    "l": 4
   }
  ],
  "others": [
   {
-   "id": "florida",
+   "id": "lsu",
    "pts": 0,
-   "prev": 24,
+   "prev": 21,
+   "w": 6,
+   "l": 4,
+   "dropped": true
+  },
+  {
+   "id": "mizzou",
+   "pts": 0,
+   "prev": 22,
+   "w": 6,
+   "l": 4,
+   "dropped": true
+  },
+  {
+   "id": "okst",
+   "pts": 0,
+   "prev": 25,
    "w": 6,
    "l": 4,
    "dropped": true
@@ -1046,6 +1062,15 @@
    "bs": 17,
    "ot": false,
    "note": "At Oklahoma"
+  },
+  {
+   "week": 11,
+   "a": "louisville",
+   "as": 16,
+   "b": "unc",
+   "bs": 14,
+   "ot": false,
+   "note": "At North Carolina"
   }
  ],
  "upcoming": [
@@ -1076,14 +1101,6 @@
   {
    "week": 12,
    "date": "2026-11-21T17:00Z",
-   "away": "wofford",
-   "home": "olemiss",
-   "neutral": false,
-   "tv": "SECN+"
-  },
-  {
-   "week": 12,
-   "date": "2026-11-21T17:00Z",
    "away": "ohiost",
    "home": "nebraska",
    "neutral": false,
@@ -1096,6 +1113,14 @@
    "home": "florida",
    "neutral": false,
    "tv": "SEC Network"
+  },
+  {
+   "week": 12,
+   "date": "2026-11-21T17:00Z",
+   "away": "wofford",
+   "home": "olemiss",
+   "neutral": false,
+   "tv": "SECN+"
   },
   {
    "week": 12,
@@ -1140,14 +1165,6 @@
   {
    "week": 12,
    "date": "2026-11-21T20:30Z",
-   "away": "lsu",
-   "home": "tenn",
-   "neutral": false,
-   "tv": "ABC"
-  },
-  {
-   "week": 12,
-   "date": "2026-11-21T20:30Z",
    "away": "indiana",
    "home": "washington",
    "neutral": false,
@@ -1156,10 +1173,26 @@
   {
    "week": 12,
    "date": "2026-11-21T20:30Z",
+   "away": "lsu",
+   "home": "tenn",
+   "neutral": false,
+   "tv": "ABC"
+  },
+  {
+   "week": 12,
+   "date": "2026-11-21T20:30Z",
    "away": "ttu",
    "home": "baylor",
    "neutral": false,
    "tv": "Fox"
+  },
+  {
+   "week": 12,
+   "date": "2026-11-21T20:45Z",
+   "away": "tamu",
+   "home": "oklahoma",
+   "neutral": false,
+   "tv": "ESPN2"
   },
   {
    "week": 12,
@@ -1208,6 +1241,14 @@
    "home": "mizzou",
    "neutral": false,
    "tv": "SEC Network"
+  },
+  {
+   "week": 12,
+   "date": "2026-11-22T00:30Z",
+   "away": "pitt",
+   "home": "louisville",
+   "neutral": false,
+   "tv": "ESPN2"
   },
   {
    "week": 12,
