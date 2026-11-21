@@ -1,6 +1,6 @@
 {
  "version": "2026-11-17-cfp12",
- "updated": "2026-11-18T12:04:16Z",
+ "updated": "2026-11-21T11:50:41Z",
  "poll": {
   "source": "CFP",
   "name": "CFP Rankings",
@@ -96,7 +96,7 @@
    "id": "oregon",
    "rank": 13,
    "prev": 16,
-   "w": 7,
+   "w": 8,
    "l": 3
   },
   {
@@ -220,7 +220,7 @@
    "l": 5
   },
   "ucf": {
-   "w": 5,
+   "w": 6,
    "l": 5
   },
   "baylor": {
@@ -279,10 +279,6 @@
    "w": 10,
    "l": 0
   },
-  "nevada": {
-   "w": 4,
-   "l": 6
-  },
   "byu": {
    "w": 8,
    "l": 2
@@ -332,7 +328,7 @@
    "l": 3
   },
   "oregon": {
-   "w": 7,
+   "w": 8,
    "l": 3
   },
   "nw": {
@@ -342,10 +338,6 @@
   "boise": {
    "w": 9,
    "l": 1
-  },
-  "texasstate": {
-   "w": 6,
-   "l": 4
   },
   "arkansas": {
    "w": 4,
@@ -357,7 +349,7 @@
   },
   "isu": {
    "w": 5,
-   "l": 5
+   "l": 6
   },
   "okst": {
    "w": 6,
@@ -381,7 +373,7 @@
   },
   "duke": {
    "w": 7,
-   "l": 3
+   "l": 4
   },
   "bc": {
    "w": 4,
@@ -440,7 +432,7 @@
    "l": 1
   },
   "unm": {
-   "w": 8,
+   "w": 9,
    "l": 2
   },
   "oklahoma": {
@@ -468,7 +460,7 @@
    "l": 5
   },
   "clemson": {
-   "w": 6,
+   "w": 7,
    "l": 4
   },
   "sdsu": {
@@ -516,7 +508,7 @@
    "l": 5
   },
   "toledo": {
-   "w": 8,
+   "w": 9,
    "l": 2
   },
   "utsa": {
@@ -561,7 +553,7 @@
   },
   "msu": {
    "w": 3,
-   "l": 7
+   "l": 8
   },
   "wvu": {
    "w": 5,
@@ -577,159 +569,6 @@
   }
  },
  "games": [
-  {
-   "week": 9,
-   "a": "miami",
-   "as": 38,
-   "b": "unc",
-   "bs": 35,
-   "ot": false,
-   "note": "At North Carolina"
-  },
-  {
-   "week": 9,
-   "a": "usc",
-   "as": 30,
-   "b": "ohiost",
-   "bs": 18,
-   "ot": false,
-   "note": "At USC"
-  },
-  {
-   "week": 9,
-   "a": "georgia",
-   "as": 27,
-   "b": "florida",
-   "bs": 8,
-   "ot": false,
-   "note": ""
-  },
-  {
-   "week": 9,
-   "a": "indiana",
-   "as": 23,
-   "b": "minn",
-   "bs": 16,
-   "ot": true,
-   "note": "At Indiana"
-  },
-  {
-   "week": 9,
-   "a": "nd",
-   "as": 35,
-   "b": "navy",
-   "bs": 13,
-   "ot": false,
-   "note": ""
-  },
-  {
-   "week": 9,
-   "a": "utah",
-   "as": 49,
-   "b": "cincy",
-   "bs": 25,
-   "ot": false,
-   "note": "At Cincinnati"
-  },
-  {
-   "week": 9,
-   "a": "ucla",
-   "as": 27,
-   "b": "nevada",
-   "bs": 0,
-   "ot": false,
-   "note": "At UCLA"
-  },
-  {
-   "week": 9,
-   "a": "byu",
-   "as": 27,
-   "b": "asu",
-   "bs": 20,
-   "ot": false,
-   "note": "At BYU"
-  },
-  {
-   "week": 9,
-   "a": "texas",
-   "as": 31,
-   "b": "msst",
-   "bs": 3,
-   "ot": false,
-   "note": "At Texas"
-  },
-  {
-   "week": 9,
-   "a": "olemiss",
-   "as": 45,
-   "b": "auburn",
-   "bs": 15,
-   "ot": false,
-   "note": "At Ole Miss"
-  },
-  {
-   "week": 9,
-   "a": "ttu",
-   "as": 34,
-   "b": "arizona",
-   "bs": 26,
-   "ot": false,
-   "note": "At Texas Tech"
-  },
-  {
-   "week": 9,
-   "a": "wake",
-   "as": 51,
-   "b": "uva",
-   "bs": 7,
-   "ot": false,
-   "note": "At Wake Forest"
-  },
-  {
-   "week": 9,
-   "a": "oregon",
-   "as": 34,
-   "b": "nw",
-   "bs": 26,
-   "ot": false,
-   "note": "At Oregon"
-  },
-  {
-   "week": 9,
-   "a": "boise",
-   "as": 46,
-   "b": "texasstate",
-   "bs": 45,
-   "ot": false,
-   "note": "At Boise State"
-  },
-  {
-   "week": 9,
-   "a": "mizzou",
-   "as": 34,
-   "b": "arkansas",
-   "bs": 10,
-   "ot": false,
-   "note": "At Arkansas"
-  },
-  {
-   "week": 9,
-   "a": "iowa",
-   "as": 30,
-   "b": "wisc",
-   "bs": 0,
-   "ot": false,
-   "note": "At Iowa"
-  },
-  {
-   "week": 9,
-   "a": "scar",
-   "as": 42,
-   "b": "oklahoma",
-   "bs": 25,
-   "ot": false,
-   "note": "At Oklahoma"
-  },
   {
    "week": 10,
    "a": "arizona",
@@ -1071,17 +910,18 @@
    "bs": 14,
    "ot": false,
    "note": "At North Carolina"
+  },
+  {
+   "week": 12,
+   "a": "oregon",
+   "as": 45,
+   "b": "msu",
+   "bs": 7,
+   "ot": false,
+   "note": "At Michigan State"
   }
  ],
  "upcoming": [
-  {
-   "week": 12,
-   "date": "2026-11-21T01:00Z",
-   "away": "oregon",
-   "home": "msu",
-   "neutral": false,
-   "tv": "Fox"
-  },
   {
    "week": 12,
    "date": "2026-11-21T17:00Z",
@@ -1276,24 +1116,6 @@
   }
  ],
  "extraTeams": [
-  {
-   "id": "nevada",
-   "name": "Nevada",
-   "abbr": "NEV",
-   "mascot": "Wolf Pack",
-   "conf": "MWC",
-   "c1": "#041e42",
-   "c2": "#8a8d8f"
-  },
-  {
-   "id": "texasstate",
-   "name": "Texas State",
-   "abbr": "TXST",
-   "mascot": "Bobcats",
-   "conf": "P12",
-   "c1": "#501214",
-   "c2": "#6a5638"
-  },
   {
    "id": "merrimack",
    "name": "Merrimack",
